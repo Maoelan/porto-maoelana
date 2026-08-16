@@ -16,8 +16,6 @@
 # next.js
 /.next/
 /out/
-
-# production
 /build
 
 # misc
@@ -30,12 +28,61 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# Secrets & Environment Variables (SUPER SECURE)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.development
+.env.test
+.env.production
+*.env
+*.pem
+*.key
+*.cert
+*.crt
+*_rsa
+*_rsa.pub
+*.keystore
+*.jks
+.npmrc
 
-# vercel
+# Vercel & Deployment
 .vercel
+*.log
+
+# Editor & IDE Directories
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.history/
+
+# OS specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# User specified ignores
+docs/experience.md
+docs/detail proyek 1.md
+docs/detail proyek 2.md
+docs/detail proyek 3.md
+docs/detail proyek 4.md
+docs/detail proyek 5.md
