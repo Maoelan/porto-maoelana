@@ -155,30 +155,10 @@ export default function Home() {
             {/* Grid Layout instead of Stacked list */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               
-              {/* HukumPekerja */}
-              <FadeInItem className="group flex flex-col p-6 bg-zinc-900/30 border border-zinc-800/50 rounded-2xl hover:bg-zinc-800/40 transition-colors">
-                <div className="flex justify-between items-start mb-3">
-                  <div className="text-zinc-500 font-mono text-xs mt-1">01 / AI & Legal Tech</div>
-                  <a href="https://github.com/Bideng-Warrior/hukumpekerja-chatbot" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors" title="View Source">
-                    <GithubLogo size={20} />
-                  </a>
-                </div>
-                <h3 className="text-2xl font-bold mb-3 group-hover:text-white transition-colors">HukumPekerja</h3>
-                <p className="text-sm text-zinc-400 mb-6 leading-relaxed flex-grow">
-                  Designed a strict RAG-based AI chatbot to democratize Indonesian labor law information. Engineered a Hybrid AI architecture (local Llama-3 with Gemini fallback) and implemented pgvector for semantic search, ensuring responses include transparent legal citations without hallucinations.
-                </p>
-                <div className="flex flex-wrap gap-1.5 mt-auto">
-                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Next.js 14</span>
-                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Supabase</span>
-                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">pgvector</span>
-                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Llama-3 & Gemini</span>
-                </div>
-              </FadeInItem>
-
               {/* e-Puskesmas RPA */}
               <FadeInItem className="group flex flex-col p-6 bg-zinc-900/30 border border-zinc-800/50 rounded-2xl hover:bg-zinc-800/40 transition-colors">
                 <div className="flex justify-between items-start mb-3">
-                  <div className="text-zinc-500 font-mono text-xs mt-1">02 / RPA Automation</div>
+                  <div className="text-zinc-500 font-mono text-xs mt-1">01 / RPA Automation</div>
                   <div className="flex items-center gap-1.5 text-zinc-600" title="Internal/Confidential Repository">
                     <LockKey size={16} />
                     <span className="text-[10px] font-medium uppercase tracking-wider">Internal</span>
@@ -198,7 +178,7 @@ export default function Home() {
               {/* Portal Lapor Piket */}
               <FadeInItem className="group flex flex-col p-6 bg-zinc-900/30 border border-zinc-800/50 rounded-2xl hover:bg-zinc-800/40 transition-colors">
                 <div className="flex justify-between items-start mb-3">
-                  <div className="text-zinc-500 font-mono text-xs mt-1">03 / Healthcare UX</div>
+                  <div className="text-zinc-500 font-mono text-xs mt-1">02 / Healthcare UX</div>
                   <div className="flex items-center gap-1.5 text-zinc-600" title="Internal/Confidential Repository">
                     <LockKey size={16} />
                     <span className="text-[10px] font-medium uppercase tracking-wider">Internal</span>
@@ -218,7 +198,7 @@ export default function Home() {
               {/* Queue Calling System */}
               <FadeInItem className="group flex flex-col p-6 bg-zinc-900/30 border border-zinc-800/50 rounded-2xl hover:bg-zinc-800/40 transition-colors">
                 <div className="flex justify-between items-start mb-3">
-                  <div className="text-zinc-500 font-mono text-xs mt-1">04 / Healthcare Operations</div>
+                  <div className="text-zinc-500 font-mono text-xs mt-1">03 / Healthcare Operations</div>
                   <a href="https://github.com/Maoelan/puskesmas-queue-system" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors" title="View Source">
                     <GithubLogo size={20} />
                   </a>
@@ -234,29 +214,31 @@ export default function Home() {
                 </div>
               </FadeInItem>
 
-              {/* Tokoku Sintung */}
+              {/* Attendency Automation System */}
               <FadeInItem className="group flex flex-col p-6 bg-zinc-900/30 border border-zinc-800/50 rounded-2xl hover:bg-zinc-800/40 transition-colors">
                 <div className="flex justify-between items-start mb-3">
-                  <div className="text-zinc-500 font-mono text-xs mt-1">05 / Retail</div>
-                  <a href="https://github.com/Maoelan/Tokoku" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors" title="View Source">
-                    <GithubLogo size={20} />
-                  </a>
+                  <div className="text-zinc-500 font-mono text-xs mt-1">04 / Data Automation</div>
+                  <div className="flex items-center gap-1.5 text-zinc-600" title="Internal/Confidential Repository">
+                    <LockKey size={16} />
+                    <span className="text-[10px] font-medium uppercase tracking-wider">Internal</span>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-3 group-hover:text-white transition-colors">Tokoku Sintung POS</h3>
+                <h3 className="text-2xl font-bold mb-3 group-hover:text-white transition-colors">Attendency Automation System</h3>
                 <p className="text-sm text-zinc-400 mb-6 leading-relaxed flex-grow">
-                  Engineered a cloud-based Point of Sale and inventory management system to resolve the manual tracking inefficiencies of a family-run retail store. Eliminated stock-outs through automated low-stock alerts.
+                  Engineered an automation script to intelligently synchronize work schedules from Google Sheets directly to ZKTeco / Solution Attendance databases. Implemented a Smart Delta Sync algorithm to detect changes and eliminate manual data-entry every month, reducing human error to near zero.
                 </p>
                 <div className="flex flex-wrap gap-1.5 mt-auto">
-                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Next.js</span>
-                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Tailwind</span>
-                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Supabase</span>
+                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Python</span>
+                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Pandas</span>
+                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">PyODBC & SQL</span>
+                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Google Sheets API</span>
                 </div>
               </FadeInItem>
 
               {/* Attendance Sync */}
               <FadeInItem className="group flex flex-col p-6 bg-zinc-900/30 border border-zinc-800/50 rounded-2xl hover:bg-zinc-800/40 transition-colors">
                 <div className="flex justify-between items-start mb-3">
-                  <div className="text-zinc-500 font-mono text-xs mt-1">06 / Data Automation</div>
+                  <div className="text-zinc-500 font-mono text-xs mt-1">05 / Data Automation</div>
                   <div className="flex items-center gap-1.5 text-zinc-600" title="Internal/Confidential Repository">
                     <LockKey size={16} />
                     <span className="text-[10px] font-medium uppercase tracking-wider">Internal</span>
@@ -271,6 +253,26 @@ export default function Home() {
                   <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Python (pyodbc)</span>
                   <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Gemini AI</span>
                   <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">WhatsApp Socket</span>
+                </div>
+              </FadeInItem>
+
+              {/* HukumPekerja */}
+              <FadeInItem className="group flex flex-col p-6 bg-zinc-900/30 border border-zinc-800/50 rounded-2xl hover:bg-zinc-800/40 transition-colors">
+                <div className="flex justify-between items-start mb-3">
+                  <div className="text-zinc-500 font-mono text-xs mt-1">06 / AI & Legal Tech</div>
+                  <a href="https://github.com/Bideng-Warrior/hukumpekerja-chatbot" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors" title="View Source">
+                    <GithubLogo size={20} />
+                  </a>
+                </div>
+                <h3 className="text-2xl font-bold mb-3 group-hover:text-white transition-colors">HukumPekerja</h3>
+                <p className="text-sm text-zinc-400 mb-6 leading-relaxed flex-grow">
+                  Designed a strict RAG-based AI chatbot to democratize Indonesian labor law information. Engineered a Hybrid AI architecture (local Llama-3 with Gemini fallback) and implemented pgvector for semantic search, ensuring responses include transparent legal citations without hallucinations.
+                </p>
+                <div className="flex flex-wrap gap-1.5 mt-auto">
+                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Next.js 14</span>
+                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Supabase</span>
+                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">pgvector</span>
+                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Llama-3 & Gemini</span>
                 </div>
               </FadeInItem>
 
@@ -290,24 +292,22 @@ export default function Home() {
                 </div>
               </FadeInItem>
 
-              {/* Attendency Automation System */}
+              {/* Tokoku Sintung */}
               <FadeInItem className="group flex flex-col p-6 bg-zinc-900/30 border border-zinc-800/50 rounded-2xl hover:bg-zinc-800/40 transition-colors">
                 <div className="flex justify-between items-start mb-3">
-                  <div className="text-zinc-500 font-mono text-xs mt-1">08 / Data Automation</div>
-                  <div className="flex items-center gap-1.5 text-zinc-600" title="Internal/Confidential Repository">
-                    <LockKey size={16} />
-                    <span className="text-[10px] font-medium uppercase tracking-wider">Internal</span>
-                  </div>
+                  <div className="text-zinc-500 font-mono text-xs mt-1">08 / Retail</div>
+                  <a href="https://github.com/Maoelan/Tokoku" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors" title="View Source">
+                    <GithubLogo size={20} />
+                  </a>
                 </div>
-                <h3 className="text-2xl font-bold mb-3 group-hover:text-white transition-colors">Attendency Automation System</h3>
+                <h3 className="text-2xl font-bold mb-3 group-hover:text-white transition-colors">Tokoku Sintung POS</h3>
                 <p className="text-sm text-zinc-400 mb-6 leading-relaxed flex-grow">
-                  Engineered an automation script to intelligently synchronize work schedules from Google Sheets directly to ZKTeco / Solution Attendance databases. Implemented a Smart Delta Sync algorithm to detect changes and eliminate manual data-entry every month, reducing human error to near zero.
+                  Engineered a cloud-based Point of Sale and inventory management system to resolve the manual tracking inefficiencies of a family-run retail store. Eliminated stock-outs through automated low-stock alerts.
                 </p>
                 <div className="flex flex-wrap gap-1.5 mt-auto">
-                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Python</span>
-                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Pandas</span>
-                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">PyODBC & SQL</span>
-                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Google Sheets API</span>
+                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Next.js</span>
+                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Tailwind</span>
+                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Supabase</span>
                 </div>
               </FadeInItem>
 
