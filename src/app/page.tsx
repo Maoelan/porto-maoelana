@@ -262,20 +262,20 @@ export default function Home() {
                     <span className="text-[10px] font-medium uppercase tracking-wider">Internal</span>
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-3 group-hover:text-white transition-colors">Attendency Automation System</h3>
+                <h3 className="text-2xl font-bold mb-3 group-hover:text-white transition-colors">Automated Leave Sync</h3>
                 <p className="text-sm text-zinc-400 mb-6 leading-relaxed flex-grow">
-                  Engineered an automation script to intelligently synchronize work schedules from Google Sheets directly to ZKTeco / Solution Attendance databases. Implemented a Smart Delta Sync algorithm to detect changes and eliminate manual data-entry every month, reducing human error to near zero.
+                  Engineered an AI-powered hybrid system bridging WhatsApp directly to ZKTeco MS Access databases. Leveraged Google Gemini to parse unstructured chat messages (NLP) and Node.js for real-time WebSocket connection. Includes fuzzy matching and real-time SQL deletion if a WhatsApp message is revoked.
                 </p>
                 <div className="flex flex-wrap gap-1.5 mt-auto">
-                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Python</span>
-                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Pandas</span>
-                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">PyODBC & SQL</span>
-                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Google Sheets API</span>
+                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Node.js & PM2</span>
+                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Python (pyodbc)</span>
+                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Gemini AI</span>
+                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">WhatsApp Socket</span>
                 </div>
               </FadeInItem>
 
               {/* AI Capstones */}
-              <FadeInItem className="group flex flex-col p-6 bg-zinc-900/30 border border-zinc-800/50 rounded-2xl hover:bg-zinc-800/40 transition-colors md:col-span-2">
+              <FadeInItem className="group flex flex-col p-6 bg-zinc-900/30 border border-zinc-800/50 rounded-2xl hover:bg-zinc-800/40 transition-colors">
                 <div className="flex justify-between items-start mb-3">
                   <div className="text-zinc-500 font-mono text-xs mt-1">07 / AI Capstone</div>
                 </div>
@@ -287,6 +287,27 @@ export default function Home() {
                   <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Machine Learning</span>
                   <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Deep Learning</span>
                   <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Mentorship</span>
+                </div>
+              </FadeInItem>
+
+              {/* Attendency Automation System */}
+              <FadeInItem className="group flex flex-col p-6 bg-zinc-900/30 border border-zinc-800/50 rounded-2xl hover:bg-zinc-800/40 transition-colors">
+                <div className="flex justify-between items-start mb-3">
+                  <div className="text-zinc-500 font-mono text-xs mt-1">08 / Data Automation</div>
+                  <div className="flex items-center gap-1.5 text-zinc-600" title="Internal/Confidential Repository">
+                    <LockKey size={16} />
+                    <span className="text-[10px] font-medium uppercase tracking-wider">Internal</span>
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold mb-3 group-hover:text-white transition-colors">Attendency Automation System</h3>
+                <p className="text-sm text-zinc-400 mb-6 leading-relaxed flex-grow">
+                  Engineered an automation script to intelligently synchronize work schedules from Google Sheets directly to ZKTeco / Solution Attendance databases. Implemented a Smart Delta Sync algorithm to detect changes and eliminate manual data-entry every month, reducing human error to near zero.
+                </p>
+                <div className="flex flex-wrap gap-1.5 mt-auto">
+                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Python</span>
+                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Pandas</span>
+                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">PyODBC & SQL</span>
+                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Google Sheets API</span>
                 </div>
               </FadeInItem>
 
