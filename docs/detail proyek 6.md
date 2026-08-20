@@ -11,7 +11,7 @@ Bagaimana cara kerjanya? Pegawai cukup mengirim pesan natural seperti biasa di W
 
 ✨ Coolest Feature: Jika pegawai salah ketik dan melakukan "Tarik Pesan / Delete for Everyone" di WhatsApp, sistem akan mendeteksinya dan otomatis menghapus record yang salah tersebut di database ZKTeco!
 
-Full stack automation powered by Node.js, Python, PM2, and Generative AI. Cek repositorinya di GitHub saya: [Link GitHub Anda]
+Full stack automation powered by Node.js, Python, PM2, and Generative AI. Repositori bersifat Internal (Private).
 
 #Automation #AI #Nodejs #Python #ZKTeco #HRTech #SoftwareEngineering
 

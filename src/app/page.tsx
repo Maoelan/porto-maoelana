@@ -257,9 +257,10 @@ export default function Home() {
               <FadeInItem className="group flex flex-col p-6 bg-zinc-900/30 border border-zinc-800/50 rounded-2xl hover:bg-zinc-800/40 transition-colors">
                 <div className="flex justify-between items-start mb-3">
                   <div className="text-zinc-500 font-mono text-xs mt-1">06 / HR Automation</div>
-                  <a href="https://github.com/Maoelan/whatsapp-zkteco-sync" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors" title="View Source">
-                    <GithubLogo size={20} />
-                  </a>
+                  <div className="flex items-center gap-1.5 text-zinc-600" title="Internal/Confidential Repository">
+                    <LockKey size={16} />
+                    <span className="text-[10px] font-medium uppercase tracking-wider">Internal</span>
+                  </div>
                 </div>
                 <h3 className="text-2xl font-bold mb-3 group-hover:text-white transition-colors">Automated Leave Sync</h3>
                 <p className="text-sm text-zinc-400 mb-6 leading-relaxed flex-grow">
