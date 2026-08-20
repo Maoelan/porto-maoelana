@@ -256,20 +256,20 @@ export default function Home() {
               {/* Attendance Sync */}
               <FadeInItem className="group flex flex-col p-6 bg-zinc-900/30 border border-zinc-800/50 rounded-2xl hover:bg-zinc-800/40 transition-colors">
                 <div className="flex justify-between items-start mb-3">
-                  <div className="text-zinc-500 font-mono text-xs mt-1">06 / Data Automation</div>
-                  <div className="flex items-center gap-1.5 text-zinc-600" title="Internal/Confidential Repository">
-                    <LockKey size={16} />
-                    <span className="text-[10px] font-medium uppercase tracking-wider">Internal</span>
-                  </div>
+                  <div className="text-zinc-500 font-mono text-xs mt-1">06 / HR Automation</div>
+                  <a href="https://github.com/Maoelan/whatsapp-zkteco-sync" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors" title="View Source">
+                    <GithubLogo size={20} />
+                  </a>
                 </div>
-                <h3 className="text-2xl font-bold mb-3 group-hover:text-white transition-colors">Attendance Sync</h3>
+                <h3 className="text-2xl font-bold mb-3 group-hover:text-white transition-colors">Automated Leave Sync</h3>
                 <p className="text-sm text-zinc-400 mb-6 leading-relaxed flex-grow">
-                  Built a robust Python script integrating Google Sheets with ZKTeco MS Access databases. Implemented a Delta Sync algorithm using Pandas and PyODBC, reducing monthly manual schedule data-entry from hours to just seconds while eliminating human error.
+                  Engineered an AI-powered hybrid system bridging WhatsApp directly to ZKTeco MS Access databases. Leveraged Google Gemini to parse unstructured chat messages (NLP) and Node.js for real-time WebSocket connection. Includes fuzzy matching and real-time SQL deletion if a WhatsApp message is revoked.
                 </p>
                 <div className="flex flex-wrap gap-1.5 mt-auto">
-                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Python</span>
-                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Pandas</span>
-                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">PyODBC & SQL</span>
+                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Node.js & PM2</span>
+                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Python (pyodbc)</span>
+                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">Gemini AI</span>
+                  <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[10px] font-mono tracking-tight text-zinc-300">WhatsApp Socket</span>
                 </div>
               </FadeInItem>
 
