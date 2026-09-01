@@ -2,7 +2,7 @@
   <h1 class="text-3xl md:text-5xl font-medium tracking-tight mb-6 text-black dark:text-white max-w-[20ch] leading-tight transition-colors duration-300">
     Translating complex data into operational reality.
   </h1>
-  <p class="text-gray-600 dark:text-gray-400 text-base md:text-lg font-light mb-8 max-w-[65ch] leading-relaxed transition-colors duration-300">
+  <p class="text-gray-600 dark:text-gray-400 text-base md:text-lg text-justify font-light mb-8 max-w-[65ch] leading-relaxed transition-colors duration-300">
     AI/ML Engineer & Automation Specialist. Focused on precision, clean architecture, and deploying systems that deliver measurable impact.
   </p>
   

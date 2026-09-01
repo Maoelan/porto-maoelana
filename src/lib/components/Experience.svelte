@@ -11,7 +11,7 @@
         <div class="font-mono text-xs text-gray-500 pt-1">{exp.period}</div>
         <div class="md:col-span-3 flex flex-col">
           <h3 class="text-base font-medium text-black dark:text-white mb-1 transition-colors duration-300">{exp.role} at {exp.company}</h3>
-          <p class="text-gray-600 dark:text-gray-400 text-sm max-w-[75ch] leading-relaxed transition-colors duration-300">
+          <p class="text-gray-600 dark:text-gray-400 text-sm text-justify max-w-[75ch] leading-relaxed transition-colors duration-300">
             {exp.description}
           </p>
         </div>

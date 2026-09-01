@@ -3,7 +3,7 @@
     Context
   </div>
   <div class="md:col-span-3">
-    <p class="text-base leading-relaxed text-gray-700 dark:text-gray-300 max-w-[75ch] transition-colors duration-300">
+    <p class="text-base leading-relaxed text-justify text-gray-700 dark:text-gray-300 max-w-[75ch] transition-colors duration-300">
       I am an AI/ML Engineer and Automation Specialist dedicated to solving immediate, real-world operational bottlenecks. Rather than building technology for its own sake, I focus on engineering targeted solutions. My work ranges from digitizing legacy public health infrastructure to implementing scalable machine learning models that address critical human needs. With over 4,000+ code reviews completed, I emphasize clean architecture, data-driven decisions, and deploying systems that deliver immediate impact.
     </p>
   </div>

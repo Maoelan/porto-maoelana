@@ -9,7 +9,7 @@
     {#each skills as skillCategory}
       <div class="flex flex-col gap-2 border border-black/10 dark:border-white/10 p-4 transition-colors duration-300">
         <h3 class="font-medium text-sm text-black dark:text-white transition-colors duration-300">{skillCategory.title}</h3>
-        <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-xs transition-colors duration-300">
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-justify text-xs transition-colors duration-300">
           {skillCategory.skills}
         </p>
       </div>

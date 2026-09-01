@@ -23,7 +23,7 @@
         
         <h3 class="text-base font-medium text-black dark:text-white mb-2 transition-colors duration-300">{project.title}</h3>
         
-        <p class="text-gray-600 dark:text-gray-400 text-xs leading-relaxed flex-grow mb-4 transition-colors duration-300">
+        <p class="text-gray-600 dark:text-gray-400 text-xs text-justify leading-relaxed flex-grow mb-4 transition-colors duration-300">
           {project.description}
         </p>
         

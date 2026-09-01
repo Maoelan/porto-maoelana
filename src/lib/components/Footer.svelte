@@ -1,7 +1,7 @@
 <footer id="contact" class="max-w-4xl mx-auto px-6 py-16 flex flex-col gap-8">
   <div class="max-w-2xl">
     <h2 class="text-2xl font-medium text-black dark:text-white mb-3 transition-colors duration-300">Availability</h2>
-    <p class="text-gray-600 dark:text-gray-400 text-base mb-6 leading-relaxed max-w-[65ch] transition-colors duration-300">
+    <p class="text-gray-600 dark:text-gray-400 text-base text-justify mb-6 leading-relaxed max-w-[65ch] transition-colors duration-300">
       Open for freelance opportunities, AI/ML advisory, or full-time roles in forward-thinking engineering teams.
     </p>
     <div class="flex flex-wrap gap-3 font-mono text-xs">
