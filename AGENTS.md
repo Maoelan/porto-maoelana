@@ -1,3 +1,11 @@
+## Project Configuration
+
+- **Language**: TypeScript
+- **Package Manager**: npm
+- **Add-ons**: tailwindcss
+
+---
+
 <!-- BEGIN:nextjs-agent-rules -->
 
 # This is NOT the Next.js you know
