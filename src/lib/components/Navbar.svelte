@@ -12,6 +12,22 @@
       isDark = true;
       document.documentElement.classList.add('dark');
     }
+
+    // Pre-calculate blinds polygons for pure CSS animations (zero-flash)
+    const numBars = 10;
+    const startPolygon = ['0% 0%'];
+    const endPolygon = ['0% 0%'];
+    for (let i = 0; i < numBars; i++) {
+      const left = (i / numBars) * 100;
+      const right = ((i + 1) / numBars) * 100;
+      startPolygon.push(`${left}% 0%`, `${right}% 0%`, `${right}% 0%`);
+      endPolygon.push(`${left}% 100%`, `${right}% 100%`, `${right}% 0%`);
+    }
+    startPolygon.push('0% 0%');
+    endPolygon.push('0% 0%');
+
+    document.documentElement.style.setProperty('--start-polygon', `polygon(${startPolygon.join(', ')})`);
+    document.documentElement.style.setProperty('--end-polygon', `polygon(${endPolygon.join(', ')})`);
   });
 
   function toggleTheme(event: MouseEvent) {
@@ -33,40 +49,7 @@
       return;
     }
 
-    const transition = document.startViewTransition(switchTheme);
-
-    transition.ready.then(() => {
-      const numBars = 10;
-      const startPolygon = ['0% 0%'];
-      const endPolygon = ['0% 0%'];
-      
-      for (let i = 0; i < numBars; i++) {
-        const left = (i / numBars) * 100;
-        const right = ((i + 1) / numBars) * 100;
-        
-        startPolygon.push(`${left}% 0%`, `${right}% 0%`, `${right}% 0%`);
-        endPolygon.push(`${left}% 100%`, `${right}% 100%`, `${right}% 0%`);
-      }
-      
-      startPolygon.push('0% 0%');
-      endPolygon.push('0% 0%');
-
-      const clipPath = [
-        `polygon(${startPolygon.join(', ')})`,
-        `polygon(${endPolygon.join(', ')})`
-      ];
-      
-      document.documentElement.animate(
-        {
-          clipPath: isNowDark ? clipPath : [...clipPath].reverse(),
-        },
-        {
-          duration: 600,
-          easing: "ease-in-out",
-          pseudoElement: isNowDark ? "::view-transition-new(root)" : "::view-transition-old(root)"
-        }
-      );
-    });
+    document.startViewTransition(switchTheme);
   }
 </script>
 
