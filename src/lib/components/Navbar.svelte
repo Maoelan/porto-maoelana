@@ -3,7 +3,6 @@
   import { Sun, Moon } from "phosphor-svelte";
 
   let isDark = $state(true);
-  let vtStyle = $state("");
 
   onMount(() => {
     if (localStorage.theme === 'light') {
@@ -14,29 +13,6 @@
       document.documentElement.classList.add('dark');
     }
 
-    // Pre-calculate blinds polygons and inject as actual @keyframes to avoid CSS var() bugs
-    const numBars = 10;
-    const startPolygon = ['0% 0%'];
-    const endPolygon = ['0% 0%'];
-    for (let i = 0; i < numBars; i++) {
-      const left = (i / numBars) * 100;
-      const right = ((i + 1) / numBars) * 100;
-      startPolygon.push(`${left}% 0%`, `${right}% 0%`, `${right}% 0%`);
-      endPolygon.push(`${left}% 100%`, `${right}% 100%`, `${right}% 0%`);
-    }
-    startPolygon.push('0% 0%');
-    endPolygon.push('0% 0%');
-
-    vtStyle = `
-      @keyframes blinds-in {
-        from { clip-path: polygon(${startPolygon.join(', ')}); }
-        to { clip-path: polygon(${endPolygon.join(', ')}); }
-      }
-      @keyframes blinds-out {
-        from { clip-path: polygon(${endPolygon.join(', ')}); }
-        to { clip-path: polygon(${startPolygon.join(', ')}); }
-      }
-    `;
   });
 
   function toggleTheme(event: MouseEvent) {
@@ -58,15 +34,55 @@
       return;
     }
 
-    document.startViewTransition(switchTheme);
+    const transition = document.startViewTransition(switchTheme);
+
+    transition.ready.then(() => {
+      const numBars = 10;
+      const startPolygon = ['0% 0%'];
+      const endPolygon = ['0% 0%'];
+      
+      for (let i = 0; i < numBars; i++) {
+        const left = (i / numBars) * 100;
+        const right = ((i + 1) / numBars) * 100;
+        
+        startPolygon.push(`${left}% 0%`, `${right}% 0%`, `${right}% 0%`);
+        endPolygon.push(`${left}% 100%`, `${right}% 100%`, `${right}% 0%`);
+      }
+      
+      startPolygon.push('0% 0%');
+      endPolygon.push('0% 0%');
+
+      const clipPath = [
+        `polygon(${startPolygon.join(', ')})`,
+        `polygon(${endPolygon.join(', ')})`
+      ];
+      
+      // Animate the active layer (the one performing the blinds effect)
+      document.documentElement.animate(
+        {
+          clipPath: isNowDark ? clipPath : [...clipPath].reverse(),
+          opacity: [1, 1] // Override the CSS opacity: 0
+        },
+        {
+          duration: 600,
+          easing: "ease-in-out",
+          fill: "forwards",
+          pseudoElement: isNowDark ? "::view-transition-new(root)" : "::view-transition-old(root)"
+        }
+      );
+      
+      // Ensure the passive layer is fully visible
+      document.documentElement.animate(
+        { opacity: [1, 1] },
+        {
+          duration: 600,
+          fill: "forwards",
+          pseudoElement: isNowDark ? "::view-transition-old(root)" : "::view-transition-new(root)"
+        }
+      );
+    });
   }
 </script>
-
-<svelte:head>
-  {#if vtStyle}
-    {@html `<style>${vtStyle}</style>`}
-  {/if}
-</svelte:head>
 
 <nav class="w-full border-b border-black/10 dark:border-white/10 transition-colors duration-300">
   <div class="max-w-4xl mx-auto px-6 py-4 flex flex-col items-center md:flex-row md:justify-between gap-4">

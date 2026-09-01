@@ -26,27 +26,30 @@
 
 <style>
   /* View Transition API Animations */
-  :global(::view-transition-old(root)),
+  :global(::view-transition-old(root)) {
+    animation: none;
+    mix-blend-mode: normal;
+    opacity: 1; /* Keep old view visible during the 1-frame gap */
+  }
   :global(::view-transition-new(root)) {
     animation: none;
     mix-blend-mode: normal;
+    opacity: 0; /* Hide new view during the 1-frame gap to prevent flash */
   }
   
   /* When switching to dark mode, the new dark view expands on top */
-  :global(.dark::view-transition-new(root)) {
+  :global(html.dark::view-transition-new(root)) {
     z-index: 2;
-    animation: blinds-in 600ms ease-in-out forwards;
   }
-  :global(.dark::view-transition-old(root)) {
+  :global(html.dark::view-transition-old(root)) {
     z-index: 1;
   }
   
   /* When switching to light mode, the old dark view shrinks on top */
-  :global(:root:not(.dark)::view-transition-old(root)) {
+  :global(html:not(.dark)::view-transition-old(root)) {
     z-index: 2;
-    animation: blinds-out 600ms ease-in-out forwards;
   }
-  :global(:root:not(.dark)::view-transition-new(root)) {
+  :global(html:not(.dark)::view-transition-new(root)) {
     z-index: 1;
   }
 </style>
