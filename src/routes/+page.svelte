@@ -49,14 +49,4 @@
   :global(:root:not(.dark)::view-transition-new(root)) {
     z-index: 1;
   }
-
-  @keyframes blinds-in {
-    from { clip-path: var(--start-polygon); }
-    to { clip-path: var(--end-polygon); }
-  }
-
-  @keyframes blinds-out {
-    from { clip-path: var(--end-polygon); }
-    to { clip-path: var(--start-polygon); }
-  }
 </style>

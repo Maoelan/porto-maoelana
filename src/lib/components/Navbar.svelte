@@ -3,6 +3,7 @@
   import { Sun, Moon } from "phosphor-svelte";
 
   let isDark = $state(true);
+  let vtStyle = $state("");
 
   onMount(() => {
     if (localStorage.theme === 'light') {
@@ -13,7 +14,7 @@
       document.documentElement.classList.add('dark');
     }
 
-    // Pre-calculate blinds polygons for pure CSS animations (zero-flash)
+    // Pre-calculate blinds polygons and inject as actual @keyframes to avoid CSS var() bugs
     const numBars = 10;
     const startPolygon = ['0% 0%'];
     const endPolygon = ['0% 0%'];
@@ -26,8 +27,16 @@
     startPolygon.push('0% 0%');
     endPolygon.push('0% 0%');
 
-    document.documentElement.style.setProperty('--start-polygon', `polygon(${startPolygon.join(', ')})`);
-    document.documentElement.style.setProperty('--end-polygon', `polygon(${endPolygon.join(', ')})`);
+    vtStyle = `
+      @keyframes blinds-in {
+        from { clip-path: polygon(${startPolygon.join(', ')}); }
+        to { clip-path: polygon(${endPolygon.join(', ')}); }
+      }
+      @keyframes blinds-out {
+        from { clip-path: polygon(${endPolygon.join(', ')}); }
+        to { clip-path: polygon(${startPolygon.join(', ')}); }
+      }
+    `;
   });
 
   function toggleTheme(event: MouseEvent) {
@@ -52,6 +61,12 @@
     document.startViewTransition(switchTheme);
   }
 </script>
+
+<svelte:head>
+  {#if vtStyle}
+    {@html `<style>${vtStyle}</style>`}
+  {/if}
+</svelte:head>
 
 <nav class="w-full border-b border-black/10 dark:border-white/10 transition-colors duration-300">
   <div class="max-w-4xl mx-auto px-6 py-4 flex flex-col items-center md:flex-row md:justify-between gap-4">
