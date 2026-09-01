@@ -12,7 +12,6 @@
       isDark = true;
       document.documentElement.classList.add('dark');
     }
-
   });
 
   function toggleTheme(event: MouseEvent) {
@@ -85,10 +84,10 @@
 </script>
 
 <nav class="w-full border-b border-black/10 dark:border-white/10 transition-colors duration-300">
-  <div class="max-w-4xl mx-auto px-6 py-4 flex flex-col items-center md:flex-row md:justify-between gap-4">
+  <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col items-center md:flex-row md:justify-between gap-4">
     <a href="#hero" class="text-base text-black dark:text-white font-medium tracking-tight hover:underline underline-offset-4 transition-colors duration-300">Maulana Muhammad</a>
     <div class="flex items-center gap-6">
-      <div class="flex flex-wrap justify-center gap-4 text-xs text-gray-600 dark:text-gray-400 font-mono transition-colors duration-300">
+      <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-600 dark:text-gray-400 font-mono transition-colors duration-300">
         <a href="#about" class="hover:text-black dark:hover:text-white transition-none">/about</a>
         <a href="#experience" class="hover:text-black dark:hover:text-white transition-none">/experience</a>
         <a href="#projects" class="hover:text-black dark:hover:text-white transition-none">/work</a>

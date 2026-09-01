@@ -52,4 +52,14 @@
   :global(html:not(.dark)::view-transition-new(root)) {
     z-index: 1;
   }
+
+  /* Global typography emphasis */
+  :global(strong) {
+    font-weight: 500;
+    color: #000;
+    transition: color 300ms;
+  }
+  :global(html.dark strong) {
+    color: #fff;
+  }
 </style>
