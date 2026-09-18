@@ -117,7 +117,7 @@
         <div class="pixel-box-inset p-2 w-full max-w-[260px] flex flex-col items-center">
           <div class="w-full aspect-square border-2 border-[#1f2227] dark:border-[#2f374e] overflow-hidden bg-slate-900 relative">
             <img 
-              src="/my-photo.png" 
+              src="/new-my-photo.png" 
               alt="Maulana Muhammad Avatar" 
               class="w-full h-full object-cover pixelated contrast-125 brightness-95"
             />
