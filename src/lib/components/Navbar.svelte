@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { Sun, Moon } from "phosphor-svelte";
+  import { playBlip, playSelect, playPowerUp } from "$lib/utils/sfx";
+  import { retroSettings } from "$lib/utils/state.svelte";
 
   let isDark = $state(true);
 
@@ -14,93 +15,116 @@
     }
   });
 
-  function toggleTheme(event: MouseEvent) {
-    const isNowDark = !isDark;
-    
-    const switchTheme = () => {
-      isDark = isNowDark;
-      if (isDark) {
-        document.documentElement.classList.add('dark');
-        localStorage.theme = 'dark';
-      } else {
-        document.documentElement.classList.remove('dark');
-        localStorage.theme = 'light';
-      }
-    };
-
-    if (!document.startViewTransition) {
-      switchTheme();
-      return;
+  function toggleTheme() {
+    playPowerUp();
+    isDark = !isDark;
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+      localStorage.theme = 'dark';
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.theme = 'light';
     }
+  }
 
-    const transition = document.startViewTransition(switchTheme);
+  function handleCrtToggle() {
+    playPowerUp();
+    retroSettings.toggleCrt();
+  }
 
-    transition.ready.then(() => {
-      const numBars = 10;
-      const startPolygon = ['0% 0%'];
-      const endPolygon = ['0% 0%'];
-      
-      for (let i = 0; i < numBars; i++) {
-        const left = (i / numBars) * 100;
-        const right = ((i + 1) / numBars) * 100;
-        
-        startPolygon.push(`${left}% 0%`, `${right}% 0%`, `${right}% 0%`);
-        endPolygon.push(`${left}% 100%`, `${right}% 100%`, `${right}% 0%`);
-      }
-      
-      startPolygon.push('0% 0%');
-      endPolygon.push('0% 0%');
-
-      const clipPath = [
-        `polygon(${startPolygon.join(', ')})`,
-        `polygon(${endPolygon.join(', ')})`
-      ];
-      
-      // Animate the active layer (the one performing the blinds effect)
-      document.documentElement.animate(
-        {
-          clipPath: isNowDark ? clipPath : [...clipPath].reverse(),
-          opacity: [1, 1] // Override the CSS opacity: 0
-        },
-        {
-          duration: 600,
-          easing: "ease-in-out",
-          fill: "forwards",
-          pseudoElement: isNowDark ? "::view-transition-new(root)" : "::view-transition-old(root)"
-        }
-      );
-      
-      // Ensure the passive layer is fully visible
-      document.documentElement.animate(
-        { opacity: [1, 1] },
-        {
-          duration: 600,
-          fill: "forwards",
-          pseudoElement: isNowDark ? "::view-transition-old(root)" : "::view-transition-new(root)"
-        }
-      );
-    });
+  function handleSfxToggle() {
+    retroSettings.toggleAudio();
   }
 </script>
 
-<nav class="w-full border-b border-black/10 dark:border-white/10 transition-colors duration-300">
-  <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col items-center md:flex-row md:justify-between gap-4">
-    <a href="#hero" class="text-base text-black dark:text-white font-medium tracking-tight hover:underline underline-offset-4 transition-colors duration-300">Maulana Muhammad</a>
-    <div class="flex items-center gap-6">
-      <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-600 dark:text-gray-400 font-mono transition-colors duration-300">
-        <a href="#about" class="hover:text-black dark:hover:text-white transition-none">/about</a>
-        <a href="#experience" class="hover:text-black dark:hover:text-white transition-none">/experience</a>
-        <a href="#projects" class="hover:text-black dark:hover:text-white transition-none">/work</a>
-        <a href="#skills" class="hover:text-black dark:hover:text-white transition-none">/skills</a>
+<nav class="sticky top-0 z-40 w-full border-b-2 border-[#1f2227] dark:border-[#2f374e] bg-[#f2f0e6]/95 dark:bg-[#131722]/95 backdrop-blur-none transition-colors duration-200 shadow-[0_2px_0_0_#141619] dark:shadow-[0_2px_0_0_#05070a]">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+    
+    <!-- Player Status Brand -->
+    <a 
+      href="#hero" 
+      class="group flex items-center gap-2 font-pixel-sub text-sm tracking-wider text-slate-900 dark:text-slate-100 hover:text-amber-600 dark:hover:text-amber-400 transition-none"
+      onmouseenter={playBlip}
+      onclick={playSelect}
+    >
+      <span class="inline-block w-2.5 h-2.5 bg-emerald-500 shadow-[1px_1px_0_0_#000] animate-pulse"></span>
+      <span class="font-pixel-title text-xs">MAULANA.SYS</span>
+      <span class="text-[10px] px-1.5 py-0.5 border border-slate-700 bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+        LVL 26
+      </span>
+    </a>
+
+    <!-- Navigation Nodes -->
+    <div class="flex flex-wrap items-center justify-between md:justify-end gap-2 sm:gap-4 text-xs font-pixel-sub">
+      <div class="flex items-center gap-1 sm:gap-2">
+        <a 
+          href="#about" 
+          class="px-2 py-1 border border-transparent hover:border-slate-800 dark:hover:border-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800/80 transition-none"
+          onmouseenter={playBlip}
+          onclick={playSelect}
+        >
+          [01.INFO]
+        </a>
+        <a 
+          href="#experience" 
+          class="px-2 py-1 border border-transparent hover:border-slate-800 dark:hover:border-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800/80 transition-none"
+          onmouseenter={playBlip}
+          onclick={playSelect}
+        >
+          [02.QUESTS]
+        </a>
+        <a 
+          href="#projects" 
+          class="px-2 py-1 border border-transparent hover:border-slate-800 dark:hover:border-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800/80 transition-none"
+          onmouseenter={playBlip}
+          onclick={playSelect}
+        >
+          [03.ARSENAL]
+        </a>
+        <a 
+          href="#skills" 
+          class="px-2 py-1 border border-transparent hover:border-slate-800 dark:hover:border-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800/80 transition-none"
+          onmouseenter={playBlip}
+          onclick={playSelect}
+        >
+          [04.SKILLS]
+        </a>
       </div>
-      <button onclick={toggleTheme} aria-label="Toggle Theme" class="relative w-5 h-5 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
-        <div class="absolute inset-0 flex items-center justify-center transition-all duration-500 {isDark ? 'rotate-0 opacity-100 scale-100' : '-rotate-90 opacity-0 scale-50'}">
-          <Sun size={16} />
-        </div>
-        <div class="absolute inset-0 flex items-center justify-center transition-all duration-500 {isDark ? 'rotate-90 opacity-0 scale-50' : 'rotate-0 opacity-100 scale-100'}">
-          <Moon size={16} />
-        </div>
-      </button>
+
+      <!-- Retro Utility Toggles -->
+      <div class="flex items-center gap-1 sm:gap-2 border-l-2 border-slate-400 dark:border-slate-700 pl-2 sm:pl-3">
+        <!-- SFX Sound Toggle -->
+        <button
+          onclick={handleSfxToggle}
+          onmouseenter={playBlip}
+          title="Toggle 8-bit Audio Effects"
+          class="pixel-btn px-2 py-1 text-[10px] sm:text-xs flex items-center gap-1 {retroSettings.sfxMuted ? 'opacity-60 bg-red-900/30' : 'text-emerald-600 dark:text-emerald-400'}"
+        >
+          <span>{retroSettings.sfxMuted ? '🔇 MUTE' : '🔊 SFX'}</span>
+        </button>
+
+        <!-- CRT Overlay Toggle -->
+        <button
+          onclick={handleCrtToggle}
+          onmouseenter={playBlip}
+          title="Toggle Retro CRT Monitor Filter"
+          class="pixel-btn px-2 py-1 text-[10px] sm:text-xs flex items-center gap-1 {retroSettings.crtEnabled ? 'text-amber-500 bg-amber-950/30' : ''}"
+        >
+          <span>📺 CRT</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button
+          onclick={toggleTheme}
+          onmouseenter={playBlip}
+          title="Switch Color Palette"
+          class="pixel-btn px-2 py-1 text-[10px] sm:text-xs"
+        >
+          <span>{isDark ? '🌙 DARK' : '☀️ DMG'}</span>
+        </button>
+      </div>
+
     </div>
+
   </div>
 </nav>

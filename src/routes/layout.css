@@ -1,8 +1,178 @@
 @import 'tailwindcss';
 @variant dark (&:is(.dark, .dark *));
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:wght@300;400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
 
 @theme {
-  --font-sans: 'Geist', 'Inter', sans-serif;
+  --font-pixel-title: 'Press Start 2P', monospace;
+  --font-pixel-sub: 'Silkscreen', monospace;
+  --font-pixel-body: 'Pixelify Sans', monospace, sans-serif;
+}
+
+:root {
+  --color-bg-base: #e5e3d7;
+  --color-bg-window: #f2f0e6;
+  --color-bg-panel: #dedbd0;
+  --color-border-main: #1f2227;
+  --color-border-light: #525866;
+  --color-border-shadow: #141619;
+  --color-text-main: #15171a;
+  --color-text-muted: #575e6d;
+  --color-accent-amber: #b45309;
+  --color-accent-cyan: #0284c7;
+  --color-accent-green: #15803d;
+  --color-accent-red: #b91c1c;
+}
+
+html.dark {
+  --color-bg-base: #0b0d14;
+  --color-bg-window: #131722;
+  --color-bg-panel: #1a2030;
+  --color-border-main: #2f374e;
+  --color-border-light: #475273;
+  --color-border-shadow: #05070a;
+  --color-text-main: #f1f3f9;
+  --color-text-muted: #8c96b0;
+  --color-accent-amber: #f59e0b;
+  --color-accent-cyan: #00f0ff;
+  --color-accent-green: #22c55e;
+  --color-accent-red: #ef4444;
+}
+
+/* Base resets & crisp rendering */
+body {
+  font-family: var(--font-pixel-body);
+  image-rendering: pixelated;
+  -webkit-font-smoothing: none;
+  font-smooth: never;
+}
+
+.font-pixel-title {
+  font-family: var(--font-pixel-title);
+}
+
+.font-pixel-sub {
+  font-family: var(--font-pixel-sub);
+}
+
+.font-pixel-body {
+  font-family: var(--font-pixel-body);
+}
+
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* 16-bit RPG Window Framing */
+.pixel-box {
+  background-color: var(--color-bg-window);
+  border: 3px solid var(--color-border-main);
+  box-shadow: 
+    inset -3px -3px 0 0 var(--color-border-shadow),
+    inset 3px 3px 0 0 var(--color-border-light),
+    4px 4px 0 0 var(--color-border-shadow);
+}
+
+.pixel-box-inset {
+  background-color: var(--color-bg-panel);
+  border: 2px solid var(--color-border-main);
+  box-shadow: 
+    inset 2px 2px 0 0 var(--color-border-shadow),
+    inset -2px -2px 0 0 var(--color-border-light);
+}
+
+/* Chunky 3D Arcade Buttons */
+.pixel-btn {
+  font-family: var(--font-pixel-sub);
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-border-main);
+  background-color: var(--color-bg-window);
+  color: var(--color-text-main);
+  box-shadow: 
+    inset 2px 2px 0 0 var(--color-border-light),
+    inset -2px -2px 0 0 var(--color-border-shadow),
+    3px 3px 0 0 var(--color-border-shadow);
+  transition: transform 60ms step-end, box-shadow 60ms step-end;
+  user-select: none;
+  cursor: pointer;
+}
+
+.pixel-btn:hover {
+  filter: brightness(1.08);
+}
+
+.pixel-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 
+    inset 2px 2px 0 0 var(--color-border-shadow),
+    inset -2px -2px 0 0 var(--color-border-light),
+    1px 1px 0 0 var(--color-border-shadow);
+}
+
+.pixel-btn-primary {
+  background-color: var(--color-border-main);
+  color: #ffffff;
+  border-color: var(--color-border-main);
+  box-shadow: 
+    inset 2px 2px 0 0 var(--color-border-light),
+    inset -2px -2px 0 0 var(--color-border-shadow),
+    3px 3px 0 0 var(--color-border-shadow);
+}
+
+html:not(.dark) .pixel-btn-primary {
+  background-color: #1a1d24;
+  color: #f7f6f0;
+}
+
+/* Pixel Badges */
+.pixel-badge {
+  font-family: var(--font-pixel-sub);
+  border: 2px solid var(--color-border-main);
+  box-shadow: 2px 2px 0 0 var(--color-border-shadow);
+  padding: 2px 6px;
+  font-size: 0.75rem;
+  line-height: 1.2;
+}
+
+/* Optional CRT Scanlines Effect */
+.crt-overlay::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+  background-size: 100% 4px;
+  z-index: 99;
+  pointer-events: none;
+  opacity: 0.45;
+}
+
+.crt-overlay::after {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.35);
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* Blinking retro cursor */
+@keyframes retro-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.animate-retro-blink {
+  animation: retro-blink 1s steps(1) infinite;
+}
+
+/* View Transition API */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }
