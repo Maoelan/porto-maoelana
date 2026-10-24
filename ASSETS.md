@@ -1,0 +1,55 @@
+# Image provenance
+
+No ZIP contents, environment files, private databases, employee exports or patient records are shipped. Public captures are anonymous, read-only visits to the named demo pages. All browser and phone framing is presentation code, not additional product functionality.
+
+| Asset in static/images     | Origin and treatment                                                                                                                                                                                                                                                          |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| wonderful-lombok.webp      | Public Wonderful Lombok homepage capture; no authenticated data.                                                                                                                                                                                                              |
+| lombok-mobile.webp         | Same public homepage at 390 × 844.                                                                                                                                                                                                                                            |
+| psc-sahabat.webp           | Public evaluation portal homepage, first-visit disclosure acknowledged. No report was submitted.                                                                                                                                                                              |
+| queue.webp                 | Public queue application entry screen; no patient details.                                                                                                                                                                                                                    |
+| hukumpekerja.webp          | Public assistant entry screen, disclosure acknowledged. No message was submitted. Kept as source capture.                                                                                                                                                                     |
+| tokoku.webp                | Public store entry screen. Kept as source capture.                                                                                                                                                                                                                            |
+| staff-showcase.webp        | Original HTML interface reconstruction based on the supplied absence-reporting implementation. Four sample staff references A–D, synthetic October dates and generic leave/duty/shift notes. No real staff names or IDs. Captioned on the site.                               |
+| tokoku-showcase.webp       | Original HTML POS reconstruction based on the supplied catalog/sales features. Synthetic rice, cooking oil and egg products; quantities 1, 2, 1; prices Rp72,000, Rp18,000, Rp15,000; total computed as Rp123,000. No real transaction history. Captioned in the detail page. |
+| hukumpekerja-showcase.webp | Original HTML assistant reconstruction with a synthetic question and explicitly illustrative response/reference layout. No live model output, real legal case or substantive legal advice. Team attribution retained.                                                         |
+| maulana.webp               | Supplied docs/my photo.png, resized to 900px and converted to WebP. Shown only on About, in original color; the original is preserved in docs.                                                                                                                                            |
+| working-desk.webp          | Generated illustrative photograph, built-in image generation tool; converted to WebP. Not presented as the owner's actual office.                                                                                                                                             |
+
+No generic stock photos or external footage were used. No third-party photo license attribution is required for the original synthetic plates or the generated desk image. Existing public product artwork remains part of those products' own captures; use is confined to the owner's requested portfolio presentation.
+
+## Generated desk photograph
+
+Mode: built-in image generation, not CLI/API fallback.
+Final project asset: `D:/Project/new-portofolio/static/images/working-desk.webp`.
+Original: `C:/Users/USER/.codex/generated_images/01a16e6e-78c5-7a10-be25-dc98da2aedfc/exec-48ec3143-5e14-4147-ab16-52cb7ab41d1c.png`.
+
+Exact prompt:
+
+> Use case: photorealistic-natural. Asset type: wide editorial photograph for a monochrome software engineer portfolio. A close overhead photograph of a quiet working desk in Lombok: silver laptop with black screen, a small neat stack of blank white reporting sheets with metal binder clip, a black pen, dark stone desk surface. Tight artistic asymmetric crop, laptop cropped from upper right, paper lower left. Strong natural side light from a window, tactile paper, deep black and soft silver grey. Entire photograph strictly black and white, premium documentary photography, subtle analog grain, calm and practical. No people, no text, no letters, no digits, no logos, no watermarks, no visible data or credentials. Landscape 3:2 composition. This is illustrative atmosphere, not a photograph claiming to document the owner's actual office.
+
+Synthetic content is intentional and should remain synthetic in the public portfolio. It is not a placeholder to replace with live healthcare, employee or customer records.
+
+## Color revision assets
+
+- Existing product screenshots now retain their original colors; no private source or live records were added.
+- EngineeringVisual.svelte is a code-native, explicitly simplified illustration of the real reporting workflow. The displayed code is illustrative, not a copied private implementation.
+- Contact's conversation graphic uses Phosphor icons, not a fabricated photograph. The generated desk photograph remains monochrome by design.
+- The sharing image is generated by scripts/generate-og.mjs from the public Wonderful Lombok capture and the portfolio identity. It no longer uses the portrait.
+- Phosphor icons: installed phosphor-svelte package, MIT license. Tech brand paths: installed simple-icons package, CC0-1.0 (see package DISCLAIMER.md for trademark considerations). Only the twelve named icons used by the component are bundled after tree shaking. Brand marks identify skills, not sponsorship or endorsement. No remotely loaded icon CDN.
+
+## Magma Mist workspace cutout and updated plates
+
+Current runtime asset: D:/Project/new-portofolio/static/images/workspace-magma.webp. Source PNG retained at D:/Project/new-portofolio/docs/workspace-magma-source.png; it is not part of the public static tree. Generated using the built-in image tool, not CLI/API fallback. Original generated edit: C:/Users/USER/.codex/generated_images/01a16e6e-78c5-7a10-be25-dc98da2aedfc/exec-cd40112c-2dda-4c9a-ae24-b99acc772076.png. It is illustrative artwork, not a photograph of the owner's real office. No people, private records or credentials.
+
+The original monochrome working-desk.webp is retained for recoverability but is no longer referenced by the site. Product screenshots retain their actual internal surfaces; only CSS backing planes were removed. Synthetic product plates were restyled and rerendered from scripts/render-product-plates.mjs and scripts/prepare-showcases.mjs --plates-only, with the same synthetic content and disclaimers. No internal application was executed and no live records were introduced.
+
+Primary generation prompt:
+> Use case: product-mockup. Asset type: transparent-background editorial workstation still life for a software engineer portfolio. Create a premium photorealistic isolated arrangement: an open dark forest-green laptop in three-quarter view, screen displaying only a simple abstract teal and amber application layout without any legible letters or numbers; a rich tangerine-orange hardback notebook, an amber pencil, a ceramic teal coffee cup and two blank ivory reporting sheets beside it. Accurate laptop keyboard geometry, tactile materials, warm natural side lighting, vivid but sophisticated color. Composition: landscape 3:2, all objects fully contained with generous transparent margins, viewed from elevated three-quarter angle; coherent grounded arrangement, not floating unrelated objects. Color palette: #F06F0E orange, #FFB342 amber, #0A372F deep forest green, #077777 teal. Actual alpha transparency behind and between all objects, no desk surface, no floor, no backdrop, no colored rectangle, no vignette, no grey background, no border, no cast shadow outside objects. No people, no logos, no brand marks, no real data, no credentials, no watermark. This is illustrative workspace artwork, not a claimed photograph of the owner's actual office.
+
+Refinement prompt:
+> Edit target: the attached workstation cutout. Background extraction ONLY. Keep the laptop, notebook, pencil, cup and blank paper exactly unchanged in color, shape, geometry and arrangement. Remove ALL colored haze, bloom, mist, soft illumination patches and cast shadows from the empty space around and between the objects. Every pixel outside the physical object silhouettes must be fully transparent alpha zero, including under the laptop and between notebook and pencil, around cup handle and between paper and laptop. Clean crisp antialiased cutout edges. No ground, no backdrop, no glow, no shadow, no translucent color clouds. Preserve actual transparent alpha; do not replace it with black or a checkerboard. Keep entire composition and dimensions.
+
+Alpha check: PNG RGBA 1536×1024, alpha range 0–254; sampled empty regions (0,0), (100,100), (800,900), (100,500) have alpha 0. Alpha remains present in the runtime WebP. Color and edge integration were also inspected in browser screenshots.
+
+

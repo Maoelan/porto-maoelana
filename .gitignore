@@ -1,5 +1,10 @@
 node_modules
 
+# Local design review and browser artifacts
+.taste-skill/
+test-results/
+playwright-report/
+
 # Output
 .output
 .vercel
