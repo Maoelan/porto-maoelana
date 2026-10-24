@@ -25,11 +25,18 @@ vite.config.ts.timestamp-*
 # IDE & AI Agents
 .agents/
 .vscode/
+.zcode/
 AGENTS.md
 .AGENTS.md
 CLAUDE.md
 .CLAUDE.md
 skills-lock.json
+
+# Impeccable working artifacts (PRODUCT.md, DESIGN.md, .impeccable/config.json and surface briefs stay tracked)
+.impeccable/config.local.json
+.impeccable/mocks/
+.impeccable/review/
+.impeccable/build/
 
 # Internal Docs & References
 docs/
