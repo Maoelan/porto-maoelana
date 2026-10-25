@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { Pause, Play } from 'phosphor-svelte';
 	import {
 		siPython,
 		siTypescript,
@@ -29,7 +28,6 @@
 		siPandas,
 		siGithubactions
 	];
-	let paused = $state(false);
 	let visible = $state(false);
 	let hidden = $state(false);
 	let section: HTMLElement;
@@ -52,19 +50,8 @@
 			<h2 id="tech-heading">Tools behind the work.</h2>
 			<p>Web development, applied AI, and the connections in between.</p>
 		</div>
-
-		<button
-			class="motion-control"
-			onclick={() => (paused = !paused)}
-			aria-label={paused ? 'Play tech stack animation' : 'Pause tech stack animation'}
-			aria-pressed={paused}
-			>{#if paused}<Play size={18} aria-hidden="true" />{:else}<Pause
-					size={18}
-					aria-hidden="true"
-				/>{/if}<span>{paused ? 'Play' : 'Pause'}</span></button
-		>
 	</div>
-	<div class="marquee" class:paused={paused || !visible || hidden}>
+	<div class="marquee" class:paused={!visible || hidden}>
 		<div class="track">
 			{#each [false, true] as duplicate}<div
 					class="tech-set"
@@ -110,16 +97,6 @@
 		margin-top: 12px;
 		color: var(--ink-muted);
 	}
-	.motion-control {
-		display: inline-flex;
-		align-items: center;
-		gap: 8px;
-		min-height: 44px;
-		padding: 10px 14px;
-		border: 0;
-		background: var(--surface);
-		color: var(--ink);
-	}
 	.marquee {
 		overflow: hidden;
 		margin-block: 32px 16px;
@@ -158,9 +135,6 @@
 	.marquee:focus-within .track {
 		animation-play-state: paused;
 	}
-	.motion-control:hover {
-		background: var(--accent-soft);
-	}
 	@keyframes travel {
 		to {
 			transform: translateX(-50%);
@@ -175,9 +149,6 @@
 		}
 		.tech-top p {
 			font-size: 14px;
-		}
-		.motion-control span {
-			display: none;
 		}
 		.tech-set {
 			gap: 32px;
@@ -202,9 +173,6 @@
 			padding: 0 20px;
 		}
 		.tech-set[aria-hidden] {
-			display: none;
-		}
-		.motion-control {
 			display: none;
 		}
 		.technology {

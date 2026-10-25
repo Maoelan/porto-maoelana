@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head
-	><title>{title} — Maulana Muhammad</title><meta name="description" content={description} /><link
+	><title>{title} | Maulana Muhammad</title><meta name="description" content={description} /><link
 		rel="canonical"
 		href={url}
 	/><meta property="og:type" content="website" /><meta

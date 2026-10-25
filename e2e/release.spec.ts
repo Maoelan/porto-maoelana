@@ -116,18 +116,12 @@ test('reduced motion retains readable content without running animations', async
 	expect(await page.evaluate(() => document.getAnimations().length)).toBe(0);
 });
 
-test('tech stack can be paused and pauses outside the viewport', async ({ page }) => {
+test('tech stack has no pause button and pauses outside the viewport', async ({ page }) => {
 	await page.goto('/');
+	await expect(page.getByRole('button', { name: /pause|play/i })).toHaveCount(0);
 	await page.locator('.tech-band').scrollIntoViewIfNeeded();
 	await page.mouse.move(0, 0);
 	await expect(page.locator('.marquee')).not.toHaveClass(/paused/);
-	await page.getByRole('button', { name: 'Pause tech stack animation' }).click();
-	await expect(page.locator('.marquee')).toHaveClass(/paused/);
-	await expect(page.getByRole('button', { name: 'Play tech stack animation' })).toHaveAttribute(
-		'aria-pressed',
-		'true'
-	);
-	await page.getByRole('button', { name: 'Play tech stack animation' }).click();
 	await page.locator('footer').scrollIntoViewIfNeeded();
 	await expect(page.locator('.marquee')).toHaveClass(/paused/);
 });
@@ -205,36 +199,38 @@ test('Neon Sunset keeps product surroundings transparent in both themes', async 
 	await expect(page.locator('img[src="/images/workspace-magma.webp"]')).toHaveCount(1);
 });
 
-test('background motion can be paused, persists and respects reduced motion', async ({ page }) => {
+test('background has no pause control, ignores obsolete preference and respects reduced motion', async ({
+	page
+}) => {
 	await page.emulateMedia({ reducedMotion: 'no-preference' });
 	await page.goto('/');
-	const patternOpacity = await page
-		.locator('.ambient-pattern')
-		.evaluate((el) => Number(getComputedStyle(el).opacity));
-	expect(patternOpacity).toBeGreaterThanOrEqual(0.04);
-	await page.getByRole('button', { name: 'Pause background pattern', exact: true }).click();
-	await expect(page.locator('html')).toHaveAttribute('data-background-motion', 'paused');
-	expect(
-		await page.locator('.pattern-drift').evaluate((el) => getComputedStyle(el).animationPlayState)
-	).toBe('paused');
+	await page.evaluate(() => localStorage.setItem('background-motion', 'paused'));
 	await page.reload();
-	await expect(
-		page.getByRole('button', { name: 'Play background pattern', exact: true })
-	).toBeVisible();
-	await page.getByRole('button', { name: 'Play background pattern', exact: true }).click();
+	await expect(page.getByRole('button', { name: /pause|play/i })).toHaveCount(0);
 	expect(
 		await page.locator('.pattern-drift').evaluate((el) => getComputedStyle(el).animationPlayState)
 	).toBe('running');
 	await page.emulateMedia({ reducedMotion: 'reduce' });
-	await expect(
-		page.getByRole('button', { name: 'Background pattern motion disabled by your device' })
-	).toBeDisabled();
 	expect(
 		await page.locator('.pattern-drift').evaluate((el) => getComputedStyle(el).animationName)
 	).toBe('none');
-	expect(
-		await page.locator('.ambient-pattern').evaluate((el) => Number(getComputedStyle(el).opacity))
-	).toBeLessThanOrEqual(0.065);
+	expect(await page.locator('.track').evaluate((el) => getComputedStyle(el).animationName)).toBe(
+		'none'
+	);
+});
+test('published copy and page titles contain no em dash', async ({ page }) => {
+	for (const route of [
+		'/',
+		'/about',
+		'/contact',
+		'/projects',
+		...projects.map((p) => '/projects/' + p.slug),
+		'/projects/not-a-real-project'
+	]) {
+		await page.goto(route);
+		expect(await page.locator('body').innerText(), route).not.toContain('\u2014');
+		expect(await page.title(), route).not.toContain('\u2014');
+	}
 });
 
 test('showcase has no white backing or outline bleeding around its images', async ({ page }) => {

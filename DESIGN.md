@@ -1,5 +1,9 @@
 # Maulana / Color engineering dossier
 
+## Motion-control and punctuation cleanup / 25 October 2026
+
+Owner explicitly removes both visible pause/play controls. Header retains GitHub, theme and mobile-menu actions; toolkit retains its heading, icons and link. Unused BackgroundMotionToggle component removed. Ambient motion runs independently of obsolete local-storage preferences; reduced-motion, hidden-tab pause and toolkit hover/offscreen pause remain. This supersedes historical pause-control requirements below. All source em dashes replaced with context-appropriate sentences, commas, colons or title separators. Dossier direction, seed 849660999, palette, graphic density and genuine imagery remain unchanged.
+
 ## Current direction: precise graphic rhythm / 25 October 2026
 
 Latest owner request balances the two prior extremes: visible animated identity, more accents than the three-placement revision, but no return to a sticker on every card. Taste dossier direction/seed 849660999 and Neon Sunset palette retained; no redraw. Home has its hero ticket plus three bounded accents (featured heading, engineering note, workflow); About has two; Projects has one header tab; each detail has one stack note; Contact retains its single ticket. No shared footer decoration or repeated per-project label. All additions are normal-flow, width-limited, upright and separately spaced; foreground SVGs must not intersect copy/controls.

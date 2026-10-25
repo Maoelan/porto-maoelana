@@ -1,7 +1,7 @@
 import type { Experience } from '$lib/types/portfolio';
 
 /**
- * Canonical 12-entry experience registry — PRD §08. Exact periods and
+ * Canonical 12-entry experience registry: PRD §08. Exact periods and
  * employment types come from the owner; summaries follow the registry text.
  */
 export const experiences: Experience[] = [
@@ -86,7 +86,7 @@ export const experiences: Experience[] = [
 	{
 		id: 'dts-data-analytics',
 		organization: 'Digital Talent Scholarship',
-		title: 'Data Analytics — Fresh Graduate Academy',
+		title: 'Data Analytics, Fresh Graduate Academy',
 		start: '2024-04',
 		end: '2024-07',
 		employment: 'Internship · Remote',
@@ -96,7 +96,7 @@ export const experiences: Experience[] = [
 	{
 		id: 'bisa-ai-game-programmer',
 		organization: 'BISA AI Academy',
-		title: 'Game Programmer — MSIB Independent Study',
+		title: 'Game Programmer, MSIB Independent Study',
 		start: '2022-08',
 		end: '2022-12',
 		employment: 'Internship · Remote',

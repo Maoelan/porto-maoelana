@@ -1,4 +1,4 @@
-/** Identity and contact registry — PRD §05. All channels owner-authorized for public display. */
+/** Identity and contact registry: PRD §05. All channels owner-authorized for public display. */
 export const identity = {
 	name: 'Maulana Muhammad',
 	title: 'Software Engineer',

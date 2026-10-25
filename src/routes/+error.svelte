@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>{isNotFound ? 'Page not found' : `Error ${page.status}`} — Maulana Muhammad</title>
+	<title>{isNotFound ? 'Page not found' : `Error ${page.status}`} | Maulana Muhammad</title>
 	<meta name="robots" content="noindex" />
 </svelte:head>
 

@@ -1,5 +1,20 @@
 # Portfolio release review / 24 October 2026
 
+## Pause-control and punctuation cleanup / 25 October 2026
+
+Owner explicitly removes visible pause/play buttons and source em dashes. Deleted the unused BackgroundMotionToggle component, its header import/control, and the toolkit pause button/state/styles. Background no longer reads a saved pause setting. Reduced-motion and hidden-tab behavior remain; toolkit still pauses offscreen and on hover. This owner-directed removal supersedes previous manual pause-control requirements. Copy uses sentences/commas where appropriate and page titles use a vertical-bar separator. No em dash remains anywhere in src.
+
+Checks: production build passed; Svelte/TypeScript 0 errors / 0 warnings; 22 unit tests and 34 browser tests passed. Regressions verify absence of pause/play buttons, old preference not freezing the pattern, device reduced motion, offscreen pause and all published routes/404 body copy and page titles without em dashes. Existing routing, image, privacy, contrast, responsive and graphic-clearance checks pass. Source lint 0 FAIL / 2 existing Microsoft Elevate proper-name warnings, with the em-dash warning eliminated. Taste `.taste-skill/no-pause-clean-copy` 0 FAIL / 1 no-footage WARN at 1440/768/390. All eight final images opened. No unrelated video added.
+
+ROUND 1 / scoped cleanup
+Seen in one second: the unchanged engineer cover and real products, with fewer header controls.
+Idea (one sentence): the existing printed engineering dossier keeps its visual identity while removing unwanted control chrome and repetitive punctuation.
+Live thing: project search and workflow explorer retained.
+Layout words by section: cover / toolkit strip / product plates / engineering note / records / workflow / contact close.
+Scores: design 8 · usability 8 · creativity 7 · content 9 → overall 7.9; internal assessment.
+Caps applied: creativity 7 for the familiar dossier concept; explicit owner override for no visible motion-control UI.
+Top three addressed details: pause icon in desktop/mobile header removed; toolkit button removed without leaving a gap; em-dash copy and tab/error titles rewritten without changing their meaning. No new assets or sample content introduced.
+
 ## Precise graphic rhythm / 25 October 2026
 
 Owner's latest request: visible animated identity, a moderate increase in graphic placements, no foreground collisions, and no white seams around product pictures. Taste's dossier direction (“The page is the object”, seed 849660999) retained with the supplied Neon Sunset palette; no redraw, dependency or raster-image edit. Home has three accent SVGs plus its ticket; About two; project index/detail one each; Contact its connection ticket only. Footer and individual project rows remain free of repeated stickers.

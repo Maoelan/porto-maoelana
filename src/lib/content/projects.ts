@@ -1,7 +1,7 @@
 import type { Project } from '$lib/types/portfolio';
 
 /**
- * Canonical 12-project registry — PRD §06 is the source of truth.
+ * Canonical 12-project registry: PRD §06 is the source of truth.
  * Statuses: In Progress only for Wonderful Lombok, PSC Sahabat, and Automated CKG.
  * Internal entries never carry repoUrl or demoUrl. Copy is plain text; no raw HTML.
  */
@@ -68,7 +68,7 @@ export const projects: Project[] = [
 		repoUrl: 'https://github.com/Maoelan/wonderful-lombok',
 		demoUrl: 'https://wonderful-lombok-main.vercel.app/',
 		problem:
-			'A Lombok tourism business needed a real website where travelers could browse packages, estimate transfer costs, and reach them directly — instead of relying on chat threads and static social-media posts.',
+			'A Lombok tourism business needed a real website where travelers could browse packages, estimate transfer costs, and reach them directly, instead of relying on chat threads and static social-media posts.',
 		approach:
 			'A SvelteKit site backed by Convex. The tour catalog, pricing, images, and translations are managed by an admin area, so the business edits content without deployments. Transfer estimates come from real map routing: Leaflet and OpenStreetMap for display, Nominatim for geocoding, and OSRM for route distance. Inquiry CTAs open WhatsApp with context pre-filled. A GitHub Actions workflow deploys to Vercel.',
 		features: [
@@ -101,7 +101,7 @@ export const projects: Project[] = [
 			'Advance, repeat, and direct-call queue controls',
 			'Indonesian text-to-speech announcements via the Web Speech API',
 			'Queue number persisted locally across restarts',
-			'No backend, no install — runs from a browser tab'
+			'No backend or installation required. Runs from a browser tab.'
 		],
 		availability: 'Repository and public demo are live.'
 	},
@@ -133,7 +133,7 @@ export const projects: Project[] = [
 			'Admin review: filter, edit, remove, and export records',
 			'Date handling for recurring shift patterns'
 		],
-		availability: 'Internal project — no public repository or demo.'
+		availability: 'Internal project. No public repository or demo.'
 	},
 	{
 		slug: 'tokoku',
@@ -198,7 +198,7 @@ export const projects: Project[] = [
 		scope: 'Team project',
 		featured: true,
 		roleNote:
-			'Team project — the repository lives under the Bideng-Warrior organization rather than my personal account.',
+			'Team project. The repository lives under the Bideng-Warrior organization rather than my personal account.',
 		repoUrl: 'https://github.com/Bideng-Warrior/hukumpekerja-chatbot',
 		demoUrl: 'https://hukumpekerja-chatbot.vercel.app/',
 		problem:
@@ -233,7 +233,7 @@ export const projects: Project[] = [
 			'Portal upload with date-batch support',
 			'Submission history to prevent duplicates'
 		],
-		availability: 'Internal project — no public repository or demo.'
+		availability: 'Internal project. No public repository or demo.'
 	},
 	{
 		slug: 'automated-hepatitis-report',
@@ -264,7 +264,7 @@ export const projects: Project[] = [
 			'Excel report transformation before submission',
 			'Scheduled runs with logs and upload history'
 		],
-		availability: 'Internal project — no public repository or demo.'
+		availability: 'Internal project. No public repository or demo.'
 	},
 	{
 		slug: 'automated-solution-attendance',
@@ -284,9 +284,9 @@ export const projects: Project[] = [
 		features: [
 			'Google Sheets roster ingestion with Pandas',
 			'Staff identifier matching against the attendance database',
-			'Delta sync — only changed assignments are written'
+			'Delta sync writes only changed assignments'
 		],
-		availability: 'Internal project — no public repository or demo.'
+		availability: 'Internal project. No public repository or demo.'
 	},
 	{
 		slug: 'automated-leave-sync',
@@ -312,14 +312,14 @@ export const projects: Project[] = [
 		problem:
 			'Staff report leave and absences over a WhatsApp group; someone then had to read every message and update the attendance database by hand.',
 		approach:
-			'A Node.js listener (Baileys) watches the group and forwards messages to Gemini, which extracts structured leave records (validated with Pydantic). A Python reconciliation step writes them into the Microsoft Access attendance database via PyODBC — matching staff, ignoring duplicates, and deleting records when a WhatsApp message is revoked. PM2 keeps both sides running.',
+			'A Node.js listener (Baileys) watches the group and forwards messages to Gemini, which extracts structured leave records (validated with Pydantic). A Python reconciliation step writes them into the Microsoft Access attendance database via PyODBC, matching staff, ignoring duplicates, and deleting records when a WhatsApp message is revoked. PM2 keeps both sides running.',
 		features: [
 			'WhatsApp message capture via a Node.js Baileys listener',
 			'Gemini-based extraction of unstructured leave messages',
 			'Pydantic-validated records written to Microsoft Access',
 			'Duplicate detection and revoked-message cleanup'
 		],
-		availability: 'Internal project — no public repository or demo.'
+		availability: 'Internal project. No public repository or demo.'
 	},
 	{
 		slug: 'automated-health-reports',
@@ -349,7 +349,7 @@ export const projects: Project[] = [
 			'UploadSehat submission with configurable dates',
 			'Duplicate detection and per-run execution logs'
 		],
-		availability: 'Internal project — no public repository or demo.'
+		availability: 'Internal project. No public repository or demo.'
 	},
 	{
 		slug: 'automated-ckg-registration',
@@ -372,18 +372,18 @@ export const projects: Project[] = [
 		visibility: 'internal',
 		scope: 'Internal tool',
 		caveat:
-			'Final production submission is disabled pending review — this is not fully automated live registration.',
+			'Final production submission is disabled pending review. This is not fully automated live registration.',
 		problem:
 			"Registering residents for Indonesia's Cek Kesehatan Gratis program means re-typing rows from Excel spreadsheets into a web form, one resident at a time.",
 		approach:
-			'A Python assistant that validates the Excel records (OpenPyXL, defusedxml for safe parsing), checks existing registration information, and fills the browser-based form with Playwright — including CAPTCHA handling via ddddocr. The final submit step is deliberately disabled pending review, so the tool assists rather than replaces the operator.',
+			'A Python assistant that validates the Excel records (OpenPyXL, defusedxml for safe parsing), checks existing registration information, and fills the browser-based form with Playwright, including CAPTCHA handling via ddddocr. The final submit step is deliberately disabled pending review, so the tool assists rather than replaces the operator.',
 		features: [
 			'Excel record validation before any browser work',
 			'Registration status checking',
 			'Automated form completion with CAPTCHA reading',
 			'Final submission disabled pending review'
 		],
-		availability: 'Internal project — no public repository or demo.'
+		availability: 'Internal project. No public repository or demo.'
 	}
 ];
 

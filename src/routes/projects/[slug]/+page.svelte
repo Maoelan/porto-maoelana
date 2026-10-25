@@ -56,7 +56,7 @@
 					>{/if}
 			</div>
 			{#if project.visibility === 'internal'}<p class="meta">
-					Internal project — no public repository or demo.
+					Internal project. No public repository or demo.
 				</p>{/if}
 		</div>
 	</header>

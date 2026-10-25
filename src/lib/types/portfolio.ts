@@ -9,7 +9,7 @@ export interface Project {
 	slug: string;
 	/** One-line entry for index rows. */
 	summary: string;
-	/** Registry paragraph for detail pages. Plain text only — never raw HTML. */
+	/** Registry paragraph for detail pages. Plain text only: never raw HTML. */
 	description: string;
 	title: string;
 	categories: FilterCategory[];

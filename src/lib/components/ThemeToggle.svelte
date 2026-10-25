@@ -13,7 +13,7 @@
 			try {
 				if (localStorage.getItem('theme')) return;
 			} catch {
-				/* storage unavailable — fall through and follow the system */
+				/* storage unavailable: fall through and follow the system */
 			}
 			theme = event.matches ? 'dark' : 'light';
 			document.documentElement.dataset.theme = theme;
@@ -28,7 +28,7 @@
 		try {
 			localStorage.setItem('theme', theme);
 		} catch {
-			/* private mode — the choice still applies for this page view */
+			/* private mode: the choice still applies for this page view */
 		}
 	}
 </script>

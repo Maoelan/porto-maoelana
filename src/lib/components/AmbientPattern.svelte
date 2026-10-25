@@ -64,9 +64,6 @@
 		position: absolute;
 		inset: -48px;
 		animation: ambient-drift 36s ease-in-out infinite alternate;
-		animation-play-state: paused;
-	}
-	:global([data-background-motion='running']) .pattern-drift {
 		animation-play-state: running;
 	}
 	.ambient-pattern[data-hidden='true'] .pattern-drift {

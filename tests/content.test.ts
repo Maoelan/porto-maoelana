@@ -6,7 +6,7 @@ import { identity } from '../src/lib/content/identity';
 import { FILTER_CATEGORIES } from '../src/lib/types/portfolio';
 import { filterProjects } from '../src/lib/utils/project';
 
-describe('project registry — PRD §06, FR-02', () => {
+describe('project registry: PRD §06, FR-02', () => {
 	it('has exactly 12 canonical projects', () => {
 		expect(projects).toHaveLength(12);
 	});
@@ -96,7 +96,7 @@ describe('project registry — PRD §06, FR-02', () => {
 	});
 });
 
-describe('filtering and search — FR-03', () => {
+describe('filtering and search: FR-03', () => {
 	it('returns the full set for All with no query', () => {
 		expect(filterProjects(projects, 'All', '')).toHaveLength(12);
 	});
@@ -121,7 +121,7 @@ describe('filtering and search — FR-03', () => {
 	});
 });
 
-describe('experience registry — PRD §08, FR-06', () => {
+describe('experience registry: PRD §08, FR-06', () => {
 	it('has exactly 12 entries with exact source periods', () => {
 		expect(experiences).toHaveLength(12);
 		const byId = new Map(experiences.map((e) => [e.id, e]));
@@ -155,7 +155,7 @@ describe('experience registry — PRD §08, FR-06', () => {
 	});
 });
 
-describe('skills and identity — PRD §05, §09', () => {
+describe('skills and identity: PRD §05, §09', () => {
 	it('has five skill groups, none empty, no level labels', () => {
 		expect(skillGroups).toHaveLength(5);
 		for (const group of skillGroups) {

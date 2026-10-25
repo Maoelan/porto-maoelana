@@ -1,6 +1,6 @@
 import type { SkillGroup } from '$lib/types/portfolio';
 
-/** Skill taxonomy — PRD §09. No progress bars, percentages, or level labels. */
+/** Skill taxonomy: PRD §09. No progress bars, percentages, or level labels. */
 export const skillGroups: SkillGroup[] = [
 	{
 		id: 'applied-ai-ml',

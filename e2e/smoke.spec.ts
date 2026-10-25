@@ -77,7 +77,7 @@ test.describe('link integrity (FR-04, FR-07, FR-10)', () => {
 		await expect(page.getByRole('link', { name: 'View repository' })).toBeHidden();
 		await expect(page.getByRole('link', { name: 'Open live demo' })).toBeHidden();
 		await expect(
-			page.getByText('Internal project — no public repository or demo.').first()
+			page.getByText('Internal project. No public repository or demo.').first()
 		).toBeVisible();
 	});
 
