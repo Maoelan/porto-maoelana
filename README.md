@@ -36,7 +36,7 @@ Edit the typed registries, then run the checks above. Internal projects must nev
 
 ## Images
 
-`node scripts/prepare-showcases.mjs` captures anonymous public entry screens and renders a synthetic staff-reporting plate. `node scripts/render-product-plates.mjs` renders synthetic POS and legal-assistant showcase plates. `node scripts/generate-og.mjs` generates the social preview. These scripts use the locally installed Google Chrome through Puppeteer and never sign in, submit data, or invoke private operational tools.
+`node scripts/capture-authentic-products.mjs` captures the original supplied applications after isolated local startup on ports 4311/4312/4313, using example data and no production services. It also captures Wonderful Lombok at high pixel density. See ASSETS.md for the required staff query adapter and privacy isolation. The earlier prepare-showcases.mjs and render-product-plates.mjs reconstruction renderers are legacy only; their synthetic plate files are no longer used. `node scripts/generate-og.mjs` generates the social preview. No production login, sale, employee report or AI request is submitted.
 
 The desk image was generated using the built-in image tool. Full provenance is documented in QA.md. Source ZIPs are intentionally outside the repository and are not required at runtime.
 

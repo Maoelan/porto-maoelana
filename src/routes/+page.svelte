@@ -86,7 +86,7 @@
 					</div>
 					<img
 						class="project-image"
-						src="/images/wonderful-lombok.webp"
+						src="/images/wonderful-lombok-2x.webp"
 						alt="Wonderful Lombok travel product"
 						width="1440"
 						height="960"
@@ -248,13 +248,13 @@
 			<figure class="reveal">
 				<img
 					class="project-image"
-					src="/images/staff-showcase.webp"
-					alt="Staff reporting interface reconstruction with synthetic records"
+					src="/images/staff-actual.webp"
+					alt="Original staff reporting application running locally with example records"
 					width="1440"
 					height="960"
 					loading="eager"
 				/>
-				<figcaption>Interface reconstruction with synthetic records.</figcaption>
+				<figcaption>Original application, captured locally with example records.</figcaption>
 			</figure>
 		</div>
 	</div>
@@ -339,6 +339,8 @@
 		overflow: hidden;
 	}
 	.hero-screen {
+		backface-visibility: hidden;
+		outline: 1px solid transparent;
 		position: absolute;
 		overflow: hidden;
 		background: #f6f6f3;

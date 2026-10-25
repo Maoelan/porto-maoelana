@@ -20,7 +20,11 @@
 							? 'PSC Sahabat'
 							: slug === 'hukumpekerja-chatbot'
 								? 'HukumPekerja'
-								: 'Product preview'}</span
+								: slug === 'pkm-piket-absensi'
+									? 'Portal Lapor Piket'
+									: slug === 'tokoku'
+										? 'Tokoku'
+										: 'Product preview'}</span
 				><span aria-hidden="true">↗</span>
 			</div>
 			<img
@@ -37,7 +41,7 @@
 				<div class="phone-notch"></div>
 				<img
 					class="project-image"
-					src="/images/lombok-mobile.webp"
+					src="/images/lombok-mobile-3x.webp"
 					alt="Wonderful Lombok mobile website"
 					width="390"
 					height="844"
@@ -62,7 +66,9 @@
 	.browser-frame {
 		width: 100%;
 		background: #fff;
-		transform: rotate(-2deg);
+		transform: translate3d(0, 0, 0) rotate(-2deg);
+		backface-visibility: hidden;
+		outline: 1px solid transparent;
 		transform-origin: center;
 		transition: transform 650ms var(--ease);
 		flex: none;
@@ -106,7 +112,9 @@
 		padding: 7px;
 		background: #0a372f;
 		border-radius: 24px;
-		transform: rotate(7deg);
+		transform: translate3d(0, 0, 0) rotate(7deg);
+		backface-visibility: hidden;
+		outline: 1px solid transparent;
 		overflow: hidden;
 	}
 	.phone-notch {
@@ -121,6 +129,7 @@
 	}
 	.phone-frame img {
 		border-radius: 18px;
+		backface-visibility: hidden;
 	}
 	.compact {
 		min-height: 0;
@@ -128,7 +137,7 @@
 		aspect-ratio: 1.55;
 	}
 	.compact .browser-frame {
-		transform: rotate(-3deg);
+		transform: translate3d(0, 0, 0) rotate(-3deg);
 	}
 	@media (max-width: 767px) {
 		.product-stage {

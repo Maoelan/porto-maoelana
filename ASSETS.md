@@ -1,5 +1,23 @@
 # Image provenance
 
+## Current original-app captures / 25 October 2026
+
+This section supersedes the reconstructed staff, Tokoku and HukumPekerja plates below. None of those legacy *-showcase.webp files is referenced by the site anymore.
+
+| Active asset | Actual source | Privacy treatment |
+| --- | --- | --- |
+| staff-actual.webp | Supplied pkm-piket-absensi ZIP, original React App.jsx, components and CSS, running on localhost | Isolated query adapter; original hardcoded staff list replaced with generic example names in the temporary copy; Convex provider removed from that copy; no production connection or writes |
+| tokoku-actual.webp | Supplied Tokoku ZIP, original Next.js /dashboard/penjualan UI and CSS | Local-only preview session; browser-intercepted product/category fixtures; Operator Contoh; unsaved Rp90,000 cart; no database connection or sale submission |
+| hukumpekerja-actual.webp | Supplied hukumpekerja-chatbot ZIP, original Next.js TanyaHukum guest UI and CSS | Original disclaimer accepted locally; welcome screen only; no login, private conversation, AI invocation or fabricated response |
+| wonderful-lombok-2x.webp | Anonymous public Wonderful Lombok homepage, recaptured at DPR 2 | Public entry page, no form submission; 2880×1920 pixels |
+| lombok-mobile-3x.webp | Same public homepage at 390×844 CSS viewport, DPR 3 | 1170×2532 pixels |
+
+All three local captures are 2880×1920 pixels (1440×960 CSS viewport, DPR 2), WebP quality 96. Their original visual styles were not recolored, redesigned or rebuilt. Only example data/network isolation was introduced. ZIP originals were unchanged; .env files and databases were excluded from temporary extraction. Private application sources and temporary installed dependencies are outside the portfolio repository and public static tree.
+
+Capture harness: scripts/capture-authentic-products.mjs. It expects the isolated temporary apps on localhost ports 4311/4312/4313. The staff app needs its local query adapter before launch; do not run the ZIP's original Convex connection for portfolio capture. The harness blocks non-local requests for all three apps and intercepts API data for Tokoku. Capture details: docs/qa/authentic-captures.json. Framework development indicators are hidden; original product UI is not hidden or replaced. The earlier reconstruction renderers are legacy only, not the current capture path.
+
+## Historical assets and generation records
+
 No ZIP contents, environment files, private databases, employee exports or patient records are shipped. Public captures are anonymous, read-only visits to the named demo pages. All browser and phone framing is presentation code, not additional product functionality.
 
 | Asset in static/images     | Origin and treatment                                                                                                                                                                                                                                                          |

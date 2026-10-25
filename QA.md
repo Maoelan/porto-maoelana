@@ -1,5 +1,31 @@
 # Portfolio release review / 24 October 2026
 
+## Original application capture correction / 25 October 2026
+
+This correction supersedes historical claims that the staff, Tokoku and HukumPekerja pictures are reconstructions. The live site now uses original application screenshots from the supplied ZIPs. The old reconstructed files remain unreferenced for recovery/history.
+
+- Staff: original React UI/CSS, local isolated query adapter and generic staff references; no Convex production connection. Original hardcoded staff list was replaced in the temporary copy only.
+- Tokoku: original Next.js sales screen, example product/category API responses and local preview identity; cart interaction performed but never saved.
+- HukumPekerja: original TanyaHukum guest welcome screen, not an invented chat. No model inference or legal response was generated.
+- Original ZIPs were unchanged. Their .env/database files were excluded. Temporary sources/dependencies were outside the public portfolio.
+- These captures are 2880×1920, quality 96 WebP. Wonderful Lombok was recaptured at the same desktop density and 1170×2532 mobile density.
+- Frame antialiasing: GPU transform layer, hidden backfaces and transparent edge outline; no visible outline, backing rectangle, recoloring or blur filter. A DPR-2 detail screenshot was inspected at docs/qa/sharp-showcase.png.
+- Build and type checks pass. Unit tests: 22 passed. Browser tests: 26 passed, including original capture filenames, >=2880 intrinsic width, no reconstruction captions and frame compositing checks. Axe checks pass in both themes.
+- Taste Home and Projects gates: 0 FAIL at 1440/768/390px. Same defended footage/product-index warnings as before. Final sheets: .taste-skill/authentic-home and .taste-skill/authentic-projects.
+
+ROUND 1 / original-capture correction
+Seen in one second: the same Magma Mist engineer cover; product plates now visibly show the original apps.
+Idea (one sentence): the engineering dossier uses the actual software as evidence, rather than redesigned illustrations of it.
+Live thing: unchanged toolkit and workflow explorer; real local Tokoku add-to-cart controls were used for its screenshot.
+Layout words by section: hero=cover / toolkit=index / featured=original product plates / about=engineering note / experience=record / automation=workflow / contact=close.
+Scores: design 8 · usability 8.5 · creativity 7 · content 9 → overall 8.0.
+Caps applied: none; internal assessment only.
+Top three remaining observations, each with its screenshot:
+1. TanyaHukum is shown in guest welcome state (project sheets), not as proof of a live model answer. This is intentional and captioned accurately.
+2. Small thumbnails cannot expose every detail of a 1440px-wide app (project mobile sheets). High-density captures stay sharp and larger versions appear on detail pages.
+3. Angled edges still depend on browser/display subpixel rasterization (sharp-showcase.png). Higher source density and composited antialiasing improve them without blurring application content.
+
+
 ## Initial rebuild (historical baseline)
 The interface was rebuilt with Taste Skill into a monochrome engineering dossier. The SvelteKit 2 / Svelte 5 / TypeScript / Tailwind 4 stack remains. All 12 canonical projects, 12 experience entries, five skill groups and owner contact channels are present. Exactly three projects are featured. Internal tools have no public source or demo actions. In-progress statuses and HukumPekerja team attribution remain explicit.
 

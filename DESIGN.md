@@ -1,5 +1,7 @@
 # Maulana / Color engineering dossier
 
+Latest correction / 25 October 2026: the three reconstructed product screens have been replaced with captures of the original supplied applications. Original components, layout, typography and colors are retained; only runtime data and connections were isolated. Wonderful Lombok is recaptured at 2× desktop and 3× mobile density. Rotated mockup frames now use GPU-backed transforms, hidden backfaces and a transparent edge outline to improve antialiasing without adding a visible border or background. The accepted Magma Mist direction, seed 849660999, and composition remain unchanged. No new art-direction draw or generated product image was used.
+
 The owner's latest request overrides the PDF's Impeccable workflow and proposed teal palette. Taste Skill was installed with the requested npx command. No Impeccable or Ponytail workflows are used.
 
 ## Direction

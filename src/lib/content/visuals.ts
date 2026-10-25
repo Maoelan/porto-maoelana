@@ -1,6 +1,6 @@
 export const projectVisuals: Record<string, { image: string; alt: string; caption: string }> = {
 	'wonderful-lombok': {
-		image: '/images/wonderful-lombok.webp',
+		image: '/images/wonderful-lombok-2x.webp',
 		alt: 'Wonderful Lombok tour website and beach destination homepage',
 		caption: 'Public website capture. Client project in progress.'
 	},
@@ -10,10 +10,10 @@ export const projectVisuals: Record<string, { image: string; alt: string; captio
 		caption: 'Evaluation portal. Synthetic data only.'
 	},
 	'hukumpekerja-chatbot': {
-		image: '/images/hukumpekerja-showcase.webp',
-		alt: 'Reconstructed HukumPekerja assistant showing a synthetic question and illustrative reference layout',
+		image: '/images/hukumpekerja-actual.webp',
+		alt: 'Original TanyaHukum application from the supplied HukumPekerja project, showing its guest welcome screen',
 		caption:
-			'Interface reconstruction with a synthetic conversation, not a live model response. Team project.'
+			'Original application screenshot, running locally in guest mode. No AI request submitted. Team project.'
 	},
 	'puskesmas-queue-system': {
 		image: '/images/queue.webp',
@@ -21,14 +21,14 @@ export const projectVisuals: Record<string, { image: string; alt: string; captio
 		caption: 'Public browser-based queue demo.'
 	},
 	'pkm-piket-absensi': {
-		image: '/images/staff-showcase.webp',
-		alt: 'Reconstructed absence reporting screen containing four synthetic staff records',
-		caption: 'Interface reconstruction. All staff references and records are synthetic.'
+		image: '/images/staff-actual.webp',
+		alt: 'Original Portal Lapor Piket application, running locally with example staff data',
+		caption: 'Original application screenshot with isolated example data. No live employee records.'
 	},
 	tokoku: {
-		image: '/images/tokoku-showcase.webp',
-		alt: 'Reconstructed Tokoku point of sale screen with synthetic products and a sample transaction',
-		caption: 'Interface reconstruction. Product names and transaction values are synthetic.'
+		image: '/images/tokoku-actual.webp',
+		alt: 'Original Tokoku sales interface with example products and an unsaved sample cart',
+		caption: 'Original application screenshot with example products and an unsaved sample cart.'
 	}
 };
 export const shortTitles: Record<string, string> = {

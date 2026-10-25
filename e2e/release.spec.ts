@@ -141,6 +141,31 @@ test('personal portrait is limited to the About page', async ({ page }) => {
 	await expect(page.locator('img[src="/images/maulana.webp"]')).toHaveCount(1);
 });
 
+test('project captures use original applications and high density screenshots', async ({
+	page
+}) => {
+	for (const [slug, file] of [
+		['pkm-piket-absensi', 'staff-actual.webp'],
+		['tokoku', 'tokoku-actual.webp'],
+		['hukumpekerja-chatbot', 'hukumpekerja-actual.webp'],
+		['wonderful-lombok', 'wonderful-lombok-2x.webp']
+	]) {
+		await page.goto('/projects/' + slug);
+		const image = page.locator('.browser-frame img');
+		await expect(image).toHaveAttribute('src', '/images/' + file);
+		await image.evaluate(async (el) => {
+			await (el as HTMLImageElement).decode();
+		});
+		expect(
+			await image.evaluate((el) => (el as HTMLImageElement).naturalWidth)
+		).toBeGreaterThanOrEqual(2880);
+		await expect(page.locator('.project-hero figcaption')).not.toContainText('reconstruction');
+		expect(
+			await page.locator('.browser-frame').evaluate((el) => getComputedStyle(el).backfaceVisibility)
+		).toBe('hidden');
+	}
+});
+
 test('Magma Mist keeps showcases frameless and replaces monochrome workspace imagery', async ({
 	page
 }) => {
