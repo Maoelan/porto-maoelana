@@ -52,6 +52,7 @@
 			<h2 id="tech-heading">Tools behind the work.</h2>
 			<p>Web development, applied AI, and the connections in between.</p>
 		</div>
+
 		<button
 			class="motion-control"
 			onclick={() => (paused = !paused)}
@@ -83,6 +84,15 @@
 </section>
 
 <style>
+	@media (max-width: 767px) {
+		.tech-top {
+			flex-wrap: wrap;
+		}
+		.tech-top > div:first-child {
+			flex: 1;
+			min-width: 230px;
+		}
+	}
 	.tech-band {
 		padding: 96px 0 0;
 		overflow: hidden;
@@ -113,7 +123,8 @@
 	.marquee {
 		overflow: hidden;
 		margin-block: 32px 16px;
-		background: var(--accent-soft);
+		background: var(--surface);
+		color: var(--ink);
 		padding-block: 28px;
 	}
 	.track {
@@ -140,7 +151,7 @@
 		width: 32px;
 		height: 32px;
 		fill: currentColor;
-		color: var(--brand-mark);
+		color: var(--ink);
 	}
 	.paused .track,
 	.marquee:hover .track,

@@ -71,10 +71,10 @@
 		overflow: auto;
 	}
 	.keyword {
-		color: #ffb342;
+		color: var(--signal-lime);
 	}
 	.string {
-		color: #b5ead8;
+		color: var(--signal-cyan);
 	}
 	.workbench-bottom {
 		display: flex;

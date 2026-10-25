@@ -5,6 +5,7 @@
 	import { afterNavigate, goto, onNavigate } from '$app/navigation';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import AmbientPattern from '$lib/components/AmbientPattern.svelte';
 	let { children } = $props();
 	let observer: IntersectionObserver | undefined;
 	onNavigate((navigation) => {
@@ -58,17 +59,24 @@
 </script>
 
 <a href="#main-content" class="sr-only skip-link">Skip to content</a>
-<div class="page-sheet">
-	<Header />
-	<main id="main-content" tabindex="-1">{@render children()}</main>
+<div class="site-canvas">
+	<AmbientPattern />
+	<div class="page-sheet">
+		<Header />
+		<main id="main-content" tabindex="-1">{@render children()}</main>
+	</div>
+	<Footer />
 </div>
-<Footer />
 
 <style>
+	.site-canvas {
+		position: relative;
+		isolation: isolate;
+	}
 	.page-sheet {
 		position: relative;
 		z-index: 1;
-		background: var(--bg);
+		background: transparent;
 	}
 	main {
 		outline: none;

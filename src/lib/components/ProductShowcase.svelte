@@ -7,10 +7,21 @@
 		priority = false
 	}: { slug: string; eager?: boolean; compact?: boolean; priority?: boolean } = $props();
 	const visual = $derived(projectVisuals[slug]);
+	const tone = $derived(
+		slug === 'gkm-psc-sahabat'
+			? 'red'
+			: slug === 'tokoku'
+				? 'yellow'
+				: slug === 'hukumpekerja-chatbot'
+					? 'sky'
+					: slug === 'pkm-piket-absensi'
+						? 'lime'
+						: 'cyan'
+	);
 </script>
 
 {#if visual}
-	<div class:compact class="product-stage" data-ui>
+	<div class:compact class="product-stage" data-tone={tone} data-ui>
 		<div class="browser-frame">
 			<div class="browser-top">
 				<span class="browser-dots" aria-hidden="true"><i></i><i></i><i></i></span><span
@@ -65,10 +76,10 @@
 	}
 	.browser-frame {
 		width: 100%;
-		background: #fff;
-		transform: translate3d(0, 0, 0) rotate(-2deg);
+		background: transparent;
+		transform: translate3d(0, 0, 0) rotate(-1deg);
 		backface-visibility: hidden;
-		outline: 1px solid transparent;
+		border: 0;
 		transform-origin: center;
 		transition: transform 650ms var(--ease);
 		flex: none;
@@ -84,8 +95,8 @@
 		align-items: center;
 		justify-content: space-between;
 		padding: 0 14px;
-		background: #dcece4;
-		color: #0a372f;
+		background: var(--surface-sunken);
+		color: var(--ink);
 		font-size: 11px;
 		line-height: 1;
 	}
@@ -96,10 +107,12 @@
 	.browser-dots i {
 		width: 6px;
 		height: 6px;
-		background: #077777;
+		background: var(--signal-blue);
 		border-radius: 50%;
 	}
 	.browser-frame img {
+		width: 100%;
+		clip-path: inset(0 0.75px);
 		aspect-ratio: 1.5;
 		object-fit: cover;
 		object-position: top;
@@ -110,11 +123,11 @@
 		right: 5%;
 		bottom: -12%;
 		padding: 7px;
-		background: #0a372f;
+		background: var(--graphic-ink);
 		border-radius: 24px;
 		transform: translate3d(0, 0, 0) rotate(7deg);
 		backface-visibility: hidden;
-		outline: 1px solid transparent;
+		border: 0;
 		overflow: hidden;
 	}
 	.phone-notch {
@@ -124,7 +137,7 @@
 		width: 32%;
 		height: 9px;
 		border-radius: 20px;
-		background: #0a372f;
+		background: var(--graphic-ink);
 		z-index: 1;
 	}
 	.phone-frame img {
@@ -137,7 +150,7 @@
 		aspect-ratio: 1.55;
 	}
 	.compact .browser-frame {
-		transform: translate3d(0, 0, 0) rotate(-3deg);
+		transform: translate3d(0, 0, 0) rotate(-1deg);
 	}
 	@media (max-width: 767px) {
 		.product-stage {

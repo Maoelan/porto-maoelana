@@ -11,7 +11,10 @@ async function settle(page) {
 		for (const img of document.images) {
 			img.loading = 'eager';
 		}
-		await Promise.all([...document.images].map((img) => img.decode().catch(() => {})));
+		await Promise.race([
+			Promise.all([...document.images].map((img) => img.decode().catch(() => {}))),
+			new Promise((resolve) => setTimeout(resolve, 8000))
+		]);
 	});
 	await page.evaluate(async () => {
 		for (let y = 0; y < document.body.scrollHeight; y += 600) {
@@ -78,6 +81,9 @@ for (const theme of ['light', 'dark']) {
 	await themed.screenshot({ path: `docs/qa/home-${theme}.png`, fullPage: true });
 	await themed.close();
 }
+const closeTimer = setTimeout(() => browser.process()?.kill(), 5000);
+closeTimer.unref();
 await browser.close();
+clearTimeout(closeTimer);
 await writeFile('docs/qa/visual-report.json', JSON.stringify(report, null, 2));
 console.log(JSON.stringify(report, null, 2));

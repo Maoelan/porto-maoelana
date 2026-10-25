@@ -2,6 +2,7 @@
 	import { page } from '$app/state';
 	import { List, X, GithubLogo, House, SquaresFour, User, Envelope } from 'phosphor-svelte';
 	import ThemeToggle from './ThemeToggle.svelte';
+	import BackgroundMotionToggle from './BackgroundMotionToggle.svelte';
 	import { identity } from '$lib/content/identity';
 	let menuOpen = $state(false);
 	let menuButtonEl = $state<HTMLButtonElement | null>(null);
@@ -53,7 +54,7 @@
 				rel="noopener noreferrer"
 				aria-label="GitHub profile (opens in a new tab)"
 				><GithubLogo size={20} aria-hidden="true" /></a
-			><ThemeToggle /><button
+			><BackgroundMotionToggle /><ThemeToggle /><button
 				class="menu-button"
 				bind:this={menuButtonEl}
 				onclick={() => (menuOpen = !menuOpen)}
@@ -83,7 +84,7 @@
 	.site-header {
 		position: relative;
 		z-index: 40;
-		background: var(--bg);
+		background: transparent;
 	}
 	.header-inner {
 		display: flex;

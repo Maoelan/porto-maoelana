@@ -1,5 +1,25 @@
 # Image provenance
 
+## Precise graphic rhythm / 25 October 2026
+
+AmbientPattern.svelte now draws original ticket, oval, vertical capsule, arrow, circle and barcode motifs within separate inset coordinate boxes. No third-party image pack, generated bitmap or encoded record. Existing SignalGraphic vectors are reused sparingly in normal-flow slots. ProductShowcase changes CSS/chrome only: transparent backing, theme-aware bar, no outline and .75px side clipping. Actual application WebP files remain unmodified, including their legitimate white UI regions.
+
+## Restrained Neon Sunset / 25 October 2026
+
+Palette follows the owner's attached reference. Original vectors are reused only at hero, About and Contact; all repeated sticker placements removed. Ambient SVG remains at 1.2% opacity. Favicon and regenerated social composition follow the new palette. No new third-party images, no altered application captures, and no new sample records.
+
+## Quiet Signal comfort correction / 25 October 2026
+
+Existing SVG art is redrawn with internal clearance, softened palette and more deliberate layout. AmbientPattern.svelte is original code-authored background artwork, reusing the existing identity motifs at 2.5% opacity. It has no tracking, encoded record or third-party asset. Its motion can be paused and honors device reduced-motion preferences. No project screenshot was erased, recolored or replaced: only the CSS surroundings are transparent. The existing illustrative workspace is reused inside a composed figure, not presented as a photograph of the owner's workplace. Social preview and favicon now match Quiet Signal.
+
+## Expanded graphic family / 25 October 2026
+
+SignalGraphic.svelte adds six original code-authored vector shapes (seal, oval, note, strip, vertical capsule, folder tab). Their barcode textures, stars and arrows are decorative and contain no encoded private data, review scores or certifications. They appear across all main routes and the shared footer, in six existing Signal colors. No external graphic pack or new bitmap was added; no genuine product screenshot was replaced, obscured or recolored.
+
+## Signal graphic identity / 25 October 2026
+
+`src/lib/components/PortfolioStamp.svelte` is new original SVG artwork, inspired by the owner's graphic-label reference. Three color/shape variants contain the owner's name and software domains. Barcode bars are decorative and non-scannable; stars are graphic marks, not a review score. Authored in code rather than generated raster imagery for sharp edges at every density. No stock image, third-party artwork, external license or fictional project image was added. Existing genuine application screenshots are unchanged. Favicon and the generated social-preview composition now use the Signal palette; the social preview embeds the existing genuine Wonderful Lombok 2× screenshot.
+
 ## Current original-app captures / 25 October 2026
 
 This section supersedes the reconstructed staff, Tokoku and HukumPekerja plates below. None of those legacy *-showcase.webp files is referenced by the site anymore.

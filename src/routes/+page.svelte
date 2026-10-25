@@ -9,6 +9,8 @@
 		GitBranch
 	} from 'phosphor-svelte';
 	import TechMarquee from '$lib/components/TechMarquee.svelte';
+	import PortfolioStamp from '$lib/components/PortfolioStamp.svelte';
+	import SignalGraphic from '$lib/components/SignalGraphic.svelte';
 	import EngineeringVisual from '$lib/components/EngineeringVisual.svelte';
 	import Seo from '$lib/components/Seo.svelte';
 	import ProductShowcase from '$lib/components/ProductShowcase.svelte';
@@ -53,16 +55,19 @@
 				><a href="/contact" class="text-link"><Envelope size={20} aria-hidden="true" />Contact Me</a
 				>
 			</div>
-			<div class="specialties">
-				<span class="icon-label"><Brain size={18} aria-hidden="true" />AI/ML Engineer</span><span
-					class="icon-label"
-					><Code size={18} aria-hidden="true" />AI-Driven Full-Stack Developer</span
-				><span class="icon-label"
-					><GitBranch size={18} aria-hidden="true" />Automation Engineer</span
-				>
+			<div class="hero-signature-row">
+				<div class="specialties">
+					<span class="icon-label"><Brain size={18} aria-hidden="true" />AI/ML Engineer</span><span
+						class="icon-label"
+						><Code size={18} aria-hidden="true" />AI-Driven Full-Stack Developer</span
+					><span class="icon-label"
+						><GitBranch size={18} aria-hidden="true" />Automation Engineer</span
+					>
+				</div>
 			</div>
 		</div>
 		<div class="hero-art entrance" data-ui>
+			<div class="hero-stamp"><PortfolioStamp /></div>
 			<div class="hero-visuals">
 				<a
 					class="hero-screen screen-back"
@@ -113,9 +118,9 @@
 	<section class="section featured">
 		<div class="section-top">
 			<h2 class="reveal">Featured work</h2>
-			<a href="/projects" class="text-link reveal"
-				>All 12 projects <span aria-hidden="true">↗</span></a
-			>
+			<div class="identity-accent">
+				<SignalGraphic shape="strip" tone="yellow" label="Selected builds" />
+			</div>
 		</div>
 		<article class="lead-project sheet">
 			<div class="project-copy">
@@ -171,6 +176,9 @@
 				</article>
 			{/each}
 		</div>
+		<div class="all-work-link">
+			<a href="/projects" class="text-link">All 12 projects <span aria-hidden="true">↗</span></a>
+		</div>
 	</section>
 	<section class="section about-preview">
 		<div class="engineering-art reveal"><EngineeringVisual /></div>
@@ -189,20 +197,31 @@
 				software for a family retail business.
 			</p>
 			<a class="text-link reveal" href="/about">More about me ↗</a>
+			<div class="identity-accent identity-note">
+				<SignalGraphic
+					shape="note"
+					tone="cyan"
+					label="Think. Build. Refine."
+					detail="From a real problem to useful software"
+				/>
+			</div>
 		</div>
 	</section>
 	<section class="section experience-preview">
 		<div>
 			<h2 class="reveal">Software,<br />in practice.</h2>
 			<p class="reveal">Engineering, review, and the operations behind the software.</p>
-			<a class="text-link reveal" href="/about#experience">Full experience ↗</a><img
-				class="workplace-photo reveal"
-				src="/images/workspace-magma.webp"
-				alt="Illustrative color workspace cutout with a forest-green laptop, orange notebook, teal cup and blank reporting sheets"
-				width="1536"
-				height="1024"
-				loading="eager"
-			/>
+			<a class="text-link reveal" href="/about#experience">Full experience ↗</a>
+			<div class="workplace-art">
+				<img
+					class="workplace-photo reveal"
+					src="/images/workspace-magma.webp"
+					alt="Illustrative color workspace cutout with a forest-green laptop, orange notebook, teal cup and blank reporting sheets"
+					width="1536"
+					height="1024"
+					loading="eager"
+				/>
+			</div>
 		</div>
 		<div class="experience-list">
 			<article class="reveal">
@@ -235,6 +254,14 @@
 			</div>
 			<a href="/projects?category=Automation" class="text-link reveal">Explore automation ↗</a>
 		</div>
+		<div class="identity-accent workflow-accent">
+			<SignalGraphic
+				shape="tab"
+				tone="red"
+				label="Less repetition"
+				detail="Input → validation → output"
+			/>
+		</div>
 		<div class="reveal"><WorkflowExplorer /></div>
 		<div class="internal-preview">
 			<div class="reveal">
@@ -261,6 +288,37 @@
 </section>
 
 <style>
+	.all-work-link {
+		margin-top: 40px;
+		display: flex;
+		justify-content: flex-end;
+	}
+	.hero-signature-row {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		margin-top: 40px;
+	}
+	.hero-signature-row .specialties {
+		margin-top: 0;
+		flex: 1;
+	}
+	@media (max-width: 1000px) {
+		.hero-signature-row {
+			flex-wrap: wrap;
+		}
+	}
+	@media (max-width: 767px) {
+		.hero-signature-row {
+			margin-top: 28px;
+			gap: 16px;
+		}
+		.hero-signature-row .specialties {
+			flex-basis: 0;
+			min-width: 0;
+		}
+	}
+
 	@media (prefers-reduced-motion: no-preference) {
 		.screen-front {
 			animation: lay-sheet 1200ms var(--ease);
@@ -271,7 +329,7 @@
 			transform: rotate(-2deg) translate(10%, 16%);
 		}
 		to {
-			transform: rotate(-8deg);
+			transform: rotate(-3deg);
 		}
 	}
 	@media (max-width: 767px) {
@@ -284,9 +342,14 @@
 	}
 	.workplace-photo {
 		width: 100%;
-		max-width: 500px;
+		max-width: 420px;
 		aspect-ratio: 1.5;
 		object-fit: contain;
+		margin: 0 auto;
+	}
+	.workplace-art {
+		background: var(--surface);
+		padding: 24px;
 		margin-top: 32px;
 	}
 	.project-copy > .status {
@@ -302,6 +365,8 @@
 	}
 	.hero-copy {
 		padding: 56px 48px;
+		background: var(--surface);
+		color: var(--ink);
 	}
 	.hero-copy h1 {
 		font-size: clamp(56px, 5.9vw, 80px);
@@ -332,55 +397,67 @@
 		background: transparent;
 		overflow: hidden;
 		min-width: 0;
+		padding: 32px 24px 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.hero-stamp {
+		position: relative;
+		width: 200px;
+		margin: 0 8px 28px auto;
+		flex-shrink: 0;
 	}
 	.hero-visuals {
-		position: absolute;
-		inset: 0 0 60px;
+		position: relative;
+		height: 420px;
 		overflow: hidden;
+		flex-shrink: 0;
 	}
 	.hero-screen {
 		backface-visibility: hidden;
-		outline: 1px solid transparent;
+		border: 0;
 		position: absolute;
 		overflow: hidden;
-		background: #f6f6f3;
+		background: transparent;
 		transition: transform 650ms var(--ease);
 		width: 92%;
 	}
 	.screen-back {
-		left: 23%;
-		top: 44px;
-		transform: rotate(9deg);
+		left: 20%;
+		top: 16px;
+		width: 78%;
+		transform: rotate(3deg);
 	}
 	.screen-front {
-		left: -4%;
-		top: 200px;
-		transform: rotate(-8deg);
-		width: 98%;
+		left: 1%;
+		top: 145px;
+		transform: rotate(-3deg);
+		width: 94%;
 	}
 	.hero-screen:hover {
 		transform: rotate(0deg) translateY(-8px);
 	}
 	.mini-chrome {
+		background: var(--surface-sunken);
 		height: 28px;
 		padding-inline: 14px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		font-size: 11px;
-		color: var(--ink-muted);
+		color: var(--ink);
 	}
 	.hero-screen img {
+		width: 100%;
+		clip-path: inset(0 0.75px);
 		aspect-ratio: 1.5;
 		object-fit: cover;
 	}
 	.hero-caption {
-		position: absolute;
+		position: relative;
 		background: transparent;
-		padding: 8px 24px;
-		bottom: 0;
-		left: 0;
-		right: 0;
+		padding: 16px 0 0;
 		display: flex;
 		justify-content: space-between;
 		gap: 16px;
@@ -408,6 +485,7 @@
 		min-height: 44px;
 	}
 	.lead-project {
+		background: transparent;
 		display: grid;
 		grid-template-columns: 36% 1fr;
 		gap: 48px;
@@ -437,6 +515,14 @@
 		align-self: stretch;
 		min-width: 0;
 		overflow: hidden;
+	}
+	.supporting-project:first-child > a {
+		display: block;
+		background: transparent;
+	}
+	.supporting-project:last-child > a {
+		display: block;
+		background: transparent;
 	}
 	.supporting-work {
 		display: grid;
@@ -500,6 +586,12 @@
 		background: var(--surface);
 		padding: 32px;
 	}
+	.experience-list article:first-child {
+		background: var(--surface);
+	}
+	.experience-list article:last-child {
+		background: var(--surface);
+	}
 	.experience-list h3 {
 		margin-top: 0;
 	}
@@ -561,13 +653,13 @@
 			min-height: 580px;
 		}
 		.screen-front {
-			top: 230px;
-			width: 115%;
-			left: -14%;
+			top: 130px;
+			width: 94%;
+			left: 1%;
 		}
 		.screen-back {
-			top: 100px;
-			width: 110%;
+			top: 16px;
+			width: 78%;
 		}
 		.hero-caption {
 			flex-direction: column;
@@ -617,17 +709,25 @@
 			margin-top: 28px;
 		}
 		.hero-art {
-			height: 310px;
+			height: auto;
+			padding: 28px 8px 16px;
+		}
+		.hero-stamp {
+			width: 160px;
+			margin-bottom: 24px;
+		}
+		.hero-visuals {
+			height: 260px;
 		}
 		.screen-back {
-			top: 20px;
+			top: 12px;
 			width: 78%;
-			left: 32%;
+			left: 20%;
 		}
 		.screen-front {
-			top: 86px;
-			width: 80%;
-			left: 0;
+			top: 90px;
+			width: 92%;
+			left: 1%;
 		}
 		.hero-caption {
 			flex-direction: row;

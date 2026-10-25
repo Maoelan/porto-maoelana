@@ -53,8 +53,8 @@
 
 <style>
 	.automation-plate {
-		background: var(--workflow-bg);
-		color: var(--workflow-ink);
+		background: transparent;
+		color: var(--ink);
 		padding: 40px;
 		min-height: 400px;
 		display: flex;
@@ -74,7 +74,7 @@
 	}
 	.nodes > span {
 		padding: 28px 24px;
-		background: var(--workflow-stage);
+		background: var(--surface-sunken);
 		font-size: 22px;
 		line-height: 1.25;
 		min-height: 110px;
@@ -93,7 +93,7 @@
 	}
 	.plate-caption {
 		font-size: 14px;
-		color: var(--workflow-muted);
+		color: var(--ink-muted);
 	}
 	.compact {
 		padding: 24px;

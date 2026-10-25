@@ -1,5 +1,51 @@
 # Maulana / Color engineering dossier
 
+## Current direction: precise graphic rhythm / 25 October 2026
+
+Latest owner request balances the two prior extremes: visible animated identity, more accents than the three-placement revision, but no return to a sticker on every card. Taste dossier direction/seed 849660999 and Neon Sunset palette retained; no redraw. Home has its hero ticket plus three bounded accents (featured heading, engineering note, workflow); About has two; Projects has one header tab; each detail has one stack note; Contact retains its single ticket. No shared footer decoration or repeated per-project label. All additions are normal-flow, width-limited, upright and separately spaced; foreground SVGs must not intersect copy/controls.
+
+Original SVG background is a 760×620 tile with seven separated motifs and internally inset marks, .055 opacity and a slow 40×28px travel over 36 seconds. No spin/flashing/zoom. Existing pause, hidden-tab pause and reduced-motion behavior retained. Opaque reading columns protect copy from the pattern; the pattern is visible in surrounding ground and transparent showcase stages.
+
+Artificial screenshot chrome follows the theme, not fixed white. Browser backing is transparent, old transparent outlines removed, and a .75px CSS inset trims the sampled side edge without modifying original image files. Real white application content remains genuine UI, not a removable outer border. All routes, imagery, links, captions and privacy restrictions retained.
+
+## Current direction: restrained Neon Sunset / 25 October 2026
+
+This section supersedes Quiet Signal and the expanded ornament system below. Owner supplies Neon Sunset: Hot Pink #ff0f7b, Acid Green #a8e000, Electric Orange #ff5000, Neon Gold #ffd000, Deep Void #0a0a12. Keep Taste's accepted “The page is the object” composition, seed 849660999; no redraw or stack change. Deep Void dominates dark mode, neutral white/grey supports light mode. Acid Green marks dark-mode actions; light-mode orange actions use a darker accessible shade. Full-strength neon is reserved for small brand moments, not large reading panels.
+
+Only three sticker placements remain across the public site: hero signature ticket, one About oval, and the Contact connection ticket. No repeated product labels, experience/workflow stickers, case-study stickers, project-index ticket or footer graphic row. The tech stack and engineering workbench return to neutral surfaces. Background texture is reduced from 2.5% to 1.2% opacity with existing pause/reduced-motion behavior. Genuine screenshot pixels, transparent showcase surroundings, all copy, routes and interactions are retained. No new imagery or dependencies.
+
+## Current direction: Quiet Signal / 25 October 2026
+
+The owner's latest requirement makes viewing comfort the absolute priority. Retain the dossier composition (“The page is the object”, seed 849660999), but supersede all previous neon/full-color fields. No new draw: this is a scoped restyle of the accepted page and requested graphic family.
+
+Palette: light ground #eef1ee / dark slate #19272d; full neutral ink. Small graphics rotate between sage #c4d4b8, mist cyan #adcdd0, sky #b7c7db, pale coral #e1b2a5, butter #e9d598 and muted slate blue #3b596e. Primary actions retain accessible theme-specific contrast. Saturation and area are reduced together; hero copy and experience records return to neutral reading surfaces. Original product UI colors remain untouched.
+
+Product surroundings (hero collage, showcase stages, project rows, workflow-illustration backings) are transparent, following the actual page ground. Browser chrome and actual screenshots retain their own necessary UI pixels; transparency does not erase product content. The hero signature occupies a separate flow row above its pictures, no longer sitting over an application's logo. Workspace art on About is paired with an explanatory caption/heading in a balanced two-column figure; the homepage desk is anchored in a contained surface with its labels.
+
+Round artwork uses explicit inner safe ellipses: smaller centered seal lettering, an inset arrow, and interior diamonds instead of stars crossing oval outlines. Oval lettering is reduced and recentered. The contact ticket is upright, its canvas expanded to 210 units, and supporting copy has 40px clear space below it. No text or symbol should touch the outline.
+
+The owner-requested background pattern reuses arrow, bracket, seal and barcode motifs as a very low-contrast SVG layer, opacity .025. It travels only 24×16px over 96 seconds, with no flash, zoom or rotation; pauses in hidden tabs; remains static without JS or with reduced motion. A 44px header control pauses/resumes it and persists the preference locally. Decorative pattern artwork is behind content and cannot intercept input. Opaque reading panels stay quiet rather than having texture stamped over them. No added service, dependency or generated raster asset.
+
+## Expanded Signal identity / 25 October 2026
+
+The owner explicitly requested much denser, more varied graphic placement. This supersedes the previous “small family” restraint, while keeping the accepted Taste direction (“The page is the object”, seed 849660999), palette, real screenshots and page hierarchy. The dossier now uses its graphic signatures throughout, rather than only three isolated tickets. No redraw or framework change.
+
+Six new original SVG forms in SignalGraphic.svelte: circular seal, oval label, folded note, directional strip, vertical capsule and folder tab. The owner's location, web/AI work, software review and reporting workflows supply the wording. Existing signature ticket is retained. All six Signal colors appear in the homepage graphics; original product interfaces are never retinted. Stars and barcode bars are decorative, not ratings or credentials.
+
+Placement: hero signature row; toolkit header; featured section and project notes; About-preview seals/note; experience desk labels; workflow heading; twelve project-index media captions; case-study stack notes; About signature, experience and desk artwork; contact close; shared three-piece footer composition. Each has reserved document-flow space, not an overlay on readable paragraphs or screenshots. The long project index intentionally repeats the same tab language; other sections vary silhouette, scale and angle. Personal photo stays only on About. New graphics are marked decorative for assistive technology because identity/category information already exists in normal content.
+
+No added looping animation, external image, raster-generation service or dependency. Existing motion/reduced-motion behavior is preserved. User-requested graphic detail overrides Taste's default ornament ban; it does not override contrast, responsive layout, real evidence or keyboard usability.
+
+## Current art direction: Signal dossier / 25 October 2026
+
+Supersedes Magma Mist below. The owner supplied a high-saturation palette and graphic-label reference. Retain Taste's accepted “The page is the object” composition and seed 849660999; no new direction draw. Map the new owner palette to flat chapter fields: cyan #1dd1e7, electric blue #1238ef, sky #2eafff, signal red #ff1701, lime #c2e100 and yellow #ffd800. Neutral ground #ededeb / dark #060c1c keeps long reading quiet. Blue was selected instead of the reference's indigo to preserve clearer contrast and separation from the dark ground.
+
+Idea: Maulana's engineering dossier becomes a set of color-coded product plates, with custom shipping-label-style signatures for web, AI and automation. The live thing remains the real workflow explorer and searchable project index. Project colors are assigned by stable slug, not list position, so filtering does not change identity. Product UI is never recolored.
+
+User-requested exceptions to Taste's default restraint: a small family of graphic tickets, stars, thick corner brackets and decorative non-scannable barcode bars, all authored in one resolution-independent SVG component. Signature=lime rounded ticket; work=cyan square ticket; contact=yellow ticket. These are artwork, not ratings, certifications or functional codes. They contain actual identity/domain information, not invented metrics. No image-generation service, external assets or new dependencies used. Existing personal portrait remains limited to About; actual application captures and privacy handling remain intact.
+
+Hero is cyan copy / blue product collage; project media uses red, cyan, lime, yellow or sky; toolkit lime; experience records sky/lime; contact channels blue/lime/cyan. Both themes keep these colored fields with fixed navy/white inks, while text surfaces follow theme. Existing motion is retained; tickets straighten on hover, reduced motion stays still. No spinning badge or new autoplay loop. Favicon and social preview follow the new identity.
+
 Latest correction / 25 October 2026: the three reconstructed product screens have been replaced with captures of the original supplied applications. Original components, layout, typography and colors are retained; only runtime data and connections were isolated. Wonderful Lombok is recaptured at 2× desktop and 3× mobile density. Rotated mockup frames now use GPU-backed transforms, hidden backfaces and a transparent edge outline to improve antialiasing without adding a visible border or background. The accepted Magma Mist direction, seed 849660999, and composition remain unchanged. No new art-direction draw or generated product image was used.
 
 The owner's latest request overrides the PDF's Impeccable workflow and proposed teal palette. Taste Skill was installed with the requested npx command. No Impeccable or Ponytail workflows are used.

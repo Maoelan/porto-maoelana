@@ -4,6 +4,7 @@
 	import { page } from '$app/state';
 	import { MagnifyingGlass, ArrowUpRight, Code } from 'phosphor-svelte';
 	import Seo from '$lib/components/Seo.svelte';
+	import SignalGraphic from '$lib/components/SignalGraphic.svelte';
 	import ProductShowcase from '$lib/components/ProductShowcase.svelte';
 	import AutomationPlate from '$lib/components/AutomationPlate.svelte';
 	import { projects } from '$lib/content/projects';
@@ -37,11 +38,16 @@
 />
 <div class="frame">
 	<header class="page-heading">
-		<h1 class="entrance">Projects</h1>
-		<p class="lead">
-			Web products, applied AI, and the systems behind everyday operations. Twelve projects, each
-			with its own context.
-		</p>
+		<div>
+			<h1 class="entrance">Projects</h1>
+			<p class="lead">
+				Web products, applied AI, and the systems behind everyday operations. Twelve projects, each
+				with its own context.
+			</p>
+		</div>
+		<div class="identity-accent">
+			<SignalGraphic shape="tab" tone="cyan" label="Built to work" detail="Web / AI / Automation" />
+		</div>
 	</header>
 	<section class="project-index" aria-label="Project index">
 		<div class="filter-bar">
@@ -102,6 +108,12 @@
 </div>
 
 <style>
+	.page-heading {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) 220px;
+		gap: 64px;
+		align-items: center;
+	}
 	.project-index {
 		padding-bottom: 96px;
 	}
@@ -160,14 +172,14 @@
 	.project-rows {
 		display: flex;
 		flex-direction: column;
-		gap: 32px;
+		gap: 24px;
 	}
 	.project-row {
 		display: grid;
 		grid-template-columns: 360px 1fr;
 		gap: 40px;
-		padding: 24px;
-		background: var(--surface);
+		padding: 0;
+		background: transparent;
 		align-items: center;
 		transition: transform 250ms var(--ease);
 	}
@@ -233,6 +245,10 @@
 		}
 	}
 	@media (max-width: 767px) {
+		.page-heading {
+			grid-template-columns: 1fr;
+			gap: 28px;
+		}
 		.project-index {
 			padding-bottom: 64px;
 		}

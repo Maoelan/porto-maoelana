@@ -7,10 +7,10 @@
 		InstagramLogo,
 		ThreadsLogo,
 		ArrowUpRight,
-		MapPin,
-		ChatCircleDots
+		MapPin
 	} from 'phosphor-svelte';
 	import Seo from '$lib/components/Seo.svelte';
+	import PortfolioStamp from '$lib/components/PortfolioStamp.svelte';
 	import { identity } from '$lib/content/identity';
 </script>
 
@@ -31,7 +31,7 @@
 				For engineering roles, project inquiries, or a technical conversation, reach me directly.
 			</p>
 			<div class="conversation">
-				<ChatCircleDots size={48} weight="duotone" aria-hidden="true" />
+				<PortfolioStamp variant="contact" />
 				<p>A project idea.<br />A tricky workflow.<br />Let’s start a conversation.</p>
 			</div>
 			<span class="meta icon-label"
@@ -86,14 +86,12 @@
 		max-width: 36ch;
 	}
 	.conversation {
-		margin-top: 32px;
-		padding: 28px;
-		background: var(--field-warm);
-		color: var(--field-ink);
+		margin-top: 36px;
+		padding: 20px 12px 36px;
 	}
 	.conversation p {
 		font-size: 20px;
-		margin-top: 20px;
+		margin-top: 40px;
 	}
 	.secondary a {
 		gap: 10px;
@@ -133,6 +131,15 @@
 	}
 	.channels > a:hover {
 		transform: translateX(4px);
+	}
+	.channels > a:nth-child(1) {
+		background: var(--surface-sunken);
+	}
+	.channels > a:nth-child(2) {
+		background: var(--surface-sunken);
+	}
+	.channels > a:nth-child(3) {
+		background: var(--surface-sunken);
 	}
 	.secondary {
 		display: flex;

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Seo from '$lib/components/Seo.svelte';
+	import SignalGraphic from '$lib/components/SignalGraphic.svelte';
 	import { experienceGroups, formatPeriod } from '$lib/content/experience';
 	import { skillGroups } from '$lib/content/skills';
 	let showEarlier = $state(false);
@@ -44,11 +45,15 @@
 				about stock, transactions and useful software.
 			</p>
 			<a class="text-link" href="/contact">Get in touch ↗</a>
+			<div class="about-signature">
+				<div><SignalGraphic shape="oval" tone="red" label="Curious by nature" /></div>
+			</div>
 		</div>
 	</div>
 	<section class="section" id="experience">
 		<div class="section-top">
 			<h2>Experience</h2>
+
 			<p class="muted">
 				Professional roles, teaching, facilitation and training. Dates and engagement types are kept
 				distinct.
@@ -83,6 +88,9 @@
 	<section class="section skills" id="skills">
 		<div class="section-top">
 			<h2>Skills & tools</h2>
+			<div class="identity-accent">
+				<SignalGraphic shape="strip" tone="yellow" label="Always learning" />
+			</div>
 			<p class="muted">The tools behind the projects and the work.</p>
 		</div>
 		{#each skillGroups as group}<div class="skill-group">
@@ -96,6 +104,12 @@
 			</div>{/each}
 	</section>
 	<figure class="desk-photo">
+		<figcaption class="desk-caption">
+			<h2>At the workbench.</h2>
+			<p>Code, review, understand, repeat. The everyday tools behind the work.</p>
+
+			<p class="meta">Illustrative workspace artwork.</p>
+		</figcaption>
 		<img
 			src="/images/workspace-magma.webp"
 			alt="Color workstation illustration with a laptop, orange notebook, teal cup and blank reporting sheets on transparent background"
@@ -103,18 +117,32 @@
 			height="1024"
 			loading="lazy"
 		/>
-		<figcaption class="meta">
-			Tools for daily work. Illustrative workspace artwork.
-		</figcaption>
 	</figure>
 </div>
 
 <style>
+	.about-signature {
+		display: flex;
+		gap: 28px;
+		align-items: center;
+		margin-top: 32px;
+	}
+	.about-signature > div:first-child {
+		width: 260px;
+		max-width: 260px;
+		min-width: 0;
+		flex: 0 1 260px;
+		transform: none;
+	}
+
 	.about-intro {
 		display: grid;
-		grid-template-columns: 4fr 6fr;
+		grid-template-columns: minmax(0, 4fr) minmax(0, 6fr);
 		gap: 32px;
 		align-items: stretch;
+	}
+	.about-intro > .sheet {
+		min-width: 0;
 	}
 	.about-intro > img {
 		width: 100%;
@@ -180,19 +208,28 @@
 	}
 	.desk-photo {
 		margin: 0 0 72px;
-		overflow: hidden;
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+		gap: 48px;
+		padding: 40px;
+		align-items: center;
+		background: var(--surface);
 	}
 	.desk-photo img {
 		width: 100%;
-		max-height: 450px;
+		max-height: 360px;
 		object-fit: contain;
 	}
-	.desk-photo figcaption {
-		margin-top: 16px;
+	.desk-caption h2 {
+		font-size: 32px;
+	}
+	.desk-caption > p {
+		margin-top: 24px;
+		max-width: 40ch;
 	}
 	@media (max-width: 767px) {
 		.about-intro {
-			grid-template-columns: 1fr;
+			grid-template-columns: minmax(0, 1fr);
 			gap: 20px;
 		}
 		.about-intro > img {
@@ -215,6 +252,9 @@
 		}
 		.desk-photo {
 			margin-bottom: 48px;
+			grid-template-columns: minmax(0, 1fr);
+			padding: 24px;
+			gap: 28px;
 		}
 	}
 </style>

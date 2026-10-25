@@ -2,54 +2,62 @@
 @custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
 :root {
 	color-scheme: light;
-	--bg: #eff6f2;
+	--bg: #f4f4f6;
 	--surface: #ffffff;
-	--surface-sunken: #dcece4;
-	--ink: #0a372f;
-	--ink-muted: #3b6258;
-	--ink-faint: #41685d;
-	--accent: #f06f0e;
-	--accent-strong: #ffb342;
-	--accent-soft: #dcece4;
-	--on-accent: #062b25;
-	--tint: #d6eee7;
-	--line: #bad5c8;
-	--line-strong: #608a7d;
-	--focus: #077777;
-	--brand-mark: #077777;
-	--selection-bg: #ffb342;
-	--inverse: #0a372f;
-	--inverse-ink: #f1f8f2;
-	--field-warm: #ffb342;
-	--field-ink: #0a372f;
-	--code-header: #077777;
-	--workflow-bg: #10483f;
-	--workflow-stage: #195c50;
-	--workflow-control: #1b6055;
-	--workflow-ink: #f1f8f2;
-	--workflow-muted: #c3e0d0;
-	--workflow-accent: #ffb342;
-	--workflow-accent-ink: #0a372f;
+	--surface-sunken: #e5e5eb;
+	--ink: #0a0a12;
+	--ink-muted: #50505f;
+	--ink-faint: #555563;
+	--accent: #a52c00;
+	--accent-strong: #802200;
+	--accent-soft: #ffe5d5;
+	--on-accent: #ffffff;
+	--tint: #ffe5d5;
+	--line: #d5d5de;
+	--line-strong: #777784;
+	--focus: #a52c00;
+	--brand-mark: #a52c00;
+	--selection-bg: #ffe480;
+	--inverse: #0a0a12;
+	--inverse-ink: #f4f4f6;
+	--signal-blue: #ff0f7b;
+	--signal-cyan: #ff5000;
+	--signal-sky: #ffd000;
+	--signal-lime: #a8e000;
+	--signal-red: #ff0f7b;
+	--signal-yellow: #ffd000;
+	--graphic-ink: #0a0a12;
+	--graphic-paper: #ffffff;
+	--field-warm: var(--surface);
+	--field-ink: var(--ink);
+	--code-header: #272735;
+	--workflow-bg: #14141f;
+	--workflow-stage: #222230;
+	--workflow-control: #333343;
+	--workflow-ink: #f4f4f6;
+	--workflow-muted: #d5d5df;
+	--workflow-accent: #a8e000;
+	--workflow-accent-ink: #0a0a12;
 	--ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 [data-theme='dark'] {
 	color-scheme: dark;
-	--bg: #0a372f;
-	--surface: #10483f;
-	--surface-sunken: #19594b;
-	--ink: #f1f8f2;
-	--ink-muted: #c3dfd1;
-	--ink-faint: #b8d7c6;
-	--accent: #f06f0e;
-	--accent-strong: #ffb342;
-	--accent-soft: #155147;
-	--on-accent: #062b25;
-	--tint: #155147;
-	--line: #326c5e;
-	--line-strong: #80ae9d;
-	--focus: #ffb342;
-	--brand-mark: #ffb342;
-	--selection-bg: #99600c;
+	--bg: #0a0a12;
+	--surface: #15151f;
+	--surface-sunken: #272735;
+	--ink: #f4f4f6;
+	--ink-muted: #d2d2dd;
+	--ink-faint: #c1c1d0;
+	--accent: #a8e000;
+	--accent-strong: #ffd000;
+	--accent-soft: #292934;
+	--on-accent: #0a0a12;
+	--tint: #292934;
+	--line: #3e3e50;
+	--line-strong: #9292a4;
+	--focus: #ffd000;
+	--brand-mark: #ff5000;
+	--selection-bg: #604000;
 }
 @theme inline {
 	--color-bg: var(--bg);
@@ -225,6 +233,36 @@ p {
 }
 .section-top p {
 	max-width: 40ch;
+}
+/* The identity pattern lives in negative space, never through reading columns. */
+:where(
+	.project-copy,
+	.about-copy,
+	.row-content,
+	.skill-group,
+	.prose,
+	.page-heading,
+	.detail-header,
+	.section-top
+) {
+	background: var(--bg);
+}
+.inverse .section-top {
+	background: var(--inverse);
+}
+.identity-accent {
+	width: min(100%, 220px);
+	flex: 0 1 auto;
+	margin-top: 32px;
+}
+.section-top > .identity-accent {
+	margin-top: 0;
+}
+.identity-note {
+	width: min(100%, 260px);
+}
+.workflow-accent {
+	margin: 0 0 32px auto;
 }
 .sheet {
 	background: var(--surface);

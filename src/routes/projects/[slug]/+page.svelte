@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { ArrowLeft, ArrowRight, ArrowUpRight, GithubLogo } from 'phosphor-svelte';
 	import Seo from '$lib/components/Seo.svelte';
+	import SignalGraphic from '$lib/components/SignalGraphic.svelte';
 	import ProductShowcase from '$lib/components/ProductShowcase.svelte';
 	import AutomationPlate from '$lib/components/AutomationPlate.svelte';
 	import { projectVisuals, shortTitles } from '$lib/content/visuals';
@@ -94,6 +95,14 @@
 			<h2>Tech stack</h2>
 			<div class="stack">
 				{#each project.techStack as tech}<span>{tech}</span>{/each}
+			</div>
+			<div class="identity-accent identity-note">
+				<SignalGraphic
+					shape="note"
+					tone="yellow"
+					label="Under the hood."
+					detail="The tools behind this project"
+				/>
 			</div>
 		</aside>
 	</div>
